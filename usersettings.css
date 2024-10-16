@@ -48,13 +48,13 @@ form input, textarea, select {
 }
 
 form input:hover, textarea:hover, select:hover {
-    background-color:#ffffff40;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
+    background-color:#ffffff25;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
 }
 
 button:hover {
-    background-color:#ffffff40;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
+    background-color:#ffffff25;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
 }
 
 /* Eingabefeld Einzeilig */
@@ -104,6 +104,14 @@ form select {
     font-weight: 400;
     font-size: 15px;
     color:#ffffff;
+}
+
+option {
+    border: none;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color:#000000;
 }
 
 /* Radio Button */
@@ -162,12 +170,12 @@ hr {
 
 }
 
-.buttom-end hr {
+.bottom-end hr {
     border: 0;
     height: 1px;
     width: 82%;
     background: #ffffff20;
-    margin-bottom: 1px;
+    margin-bottom: 35px;
 }
 
 
