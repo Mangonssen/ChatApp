@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="usersettings.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ngh4elb.css">
 </head>
 <body>
+    <header class="site-header">
+        <!--LOGO-->
+        <img src="logo.png" alt="logo" id="logo">
+    </header>
+    
+    <!--USER SETTINGS TITLE-->
     <h1>User Settings</h1>
-
+    <hr tag="heading-divider">
     <!-- GENERAL SETTINGS-->
     <h2>General Settings</h2>
     <form action="usersettings.php" method="post">
@@ -19,12 +26,13 @@
         <input type="lastname" name="lastname" id="lastname" required>
     </form>
     <br>
+    
     <form action="" method="post">
         <label for="coffeeOrTea">Coffee or Tea</label>
-        <select name="coffeeOrTea" id="coffeeOrTea">
-            <option value="coffee">Coffee</option>
-            <option value="tea">Tea</option>
-        </select>
+            <select name="coffeeOrTea" id="coffeeOrTea">
+                <option value="coffee">Coffee</option>
+                <option value="tea">Tea</option>
+            </select>
     </form>
     <br>
 
@@ -46,5 +54,14 @@
         <label for="two">Layout 2</label>
     </form>
     <br>
+
+    <div class="bottom-end">
+        <hr>
+    </div>
+    <!-- SAVE AND CANCEL -->
+    <div class="buttons">
+    <button type="submit" id="cancel">Cancel</button>
+    <button type="submit" id="save">Save</button>
+    </div>
 </body>
 </html>

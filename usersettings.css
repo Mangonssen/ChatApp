@@ -1,80 +1,177 @@
 /* Basic CSS for User Settings */
 body {
-    font-family: 'Gill Sans',sans-serif;
+    font-family: 'Manrope',sans-serif;
+    font-weight: 600;
     margin: 0;
     padding: 0;
-    background-color: #0c0a1f;
+    background: #238aff;
     color: #ffffff;
 }
 
-p, span, li, a, labelw {
+p, span, li, a {
     color: #808080; /* Set non-heading text color to gray */
+    margin-left: 175px;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+img {
+    margin-left: 50px;
+    height: 50px;
 }
 
+h1 {
+    color: #ffffff;
+    font-family: 'Degular', sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 50px;
+    margin-bottom:20px;
+    margin-left: 175px;
+    margin-top: 50px;
+}
+
+h2 {
+    color: #ffffff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    margin-left: 185px;
+    margin-bottom: 40px;
+}
+
+form {
+    margin-left: 175px;
+}
+
+
+
+form input, textarea, select {
+    border-radius: 5px;
+}
+
+form input:hover, textarea:hover, select:hover {
+    background-color:#ffffff40;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
+}
+
+button:hover {
+    background-color:#ffffff40;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
+}
+
+/* Eingabefeld Einzeilig */
+form input { 
+    width: 300px;
+    height: 12px;
+    margin-bottom: 10px;
+    margin-left: 35px;
+    padding: 10px;
+    background-color:#ffffff20;
+    border-color: #ffffff00;
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color:#ffffff;
+}
+
+/* Eingabefeld Mehrzeilig */
+form textarea {
+    width: 50%;
+    height: 200px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    background-color:#ffffff20;
+    padding-left: 20px;
+    border-color: #ffffff00;
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color:#ffffff;
+    
+}
+
+/* Eingabefeld Select */
+form select {
+    width: 325px;
+    height: 0x;
+    padding: 6px;
+    margin-left: 15px;
+    background-color:#ffffff20;
+    border-color: #ffffff00;
+
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color:#ffffff;
+}
+
+/* Radio Button */
+form input[type="radio"] {
+    margin-left: -130px;
+    margin-right: -130px;
+
+    background-color:#ffffff20;
+    border-color:#ffffff00;
+}
+
+/* Button */
+.buttons button[type="submit"] {
+    background-color:#ffffff00;
+    border: 1px solid #ffffff20;
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    offset-position: 10px;
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.buttons {
+    margin-left: 170px;
+    margin-bottom: 50px; 
+}
+
+
+/* Beschriftung */
+label {
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight:300;
+}
+
+/* Header (Logo) */
 header {
-    background: #ffffff;
-    color: #fff;
+    background: #238aff;
     padding-top: 30px;
     min-height: 70px;
-    border-bottom: #77aaff 3px solid;
+
 }
 
-header a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
+/* Trennlinie */
+hr {
+    border: 0;
+    height: 1px;
+    width: 82%;
+    background: #ffffff20;
+    margin-bottom: 50px;
+
 }
 
-header ul {
-    padding: 0;
-    list-style: none;
+.buttom-end hr {
+    border: 0;
+    height: 1px;
+    width: 82%;
+    background: #ffffff20;
+    margin-bottom: 1px;
 }
 
-header li {
-    float: left;
-    display: inline;
-    padding: 0 20px 0 20px;
-}
 
-header #branding {
-    float: left;
-}
 
-header #branding h1 {
-    margin: 0;
-}
 
-header nav {
-    float: right;
-    margin-top: 10px;
-}
 
-header .highlight, header .current a {
-    color: #77aaff;
-    font-weight: bold;
-}
 
-header a:hover {
-    color: #cccccc;
-}
-
-#main {
-    padding: 20px;
-    background: #fff;
-    margin-top: 20px;
-}
-
-footer {
-    background: #ffffff;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-}
