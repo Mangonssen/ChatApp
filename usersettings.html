@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="usersettings.css">
+</head>
+<body>
+    <h1>User Settings</h1>
+
+    <!-- GENERAL SETTINGS-->
+    <h2>General Settings</h2>
+    <form action="usersettings.php" method="post">
+        <label for="firstname">First Name</label>
+        <input type="text" name="firstname" id="firstname" required>
+        <br>
+        <label for="lastname">Last Name</label>
+        <input type="lastname" name="lastname" id="lastname" required>
+    </form>
+    <br>
+    <form action="" method="post">
+        <label for="coffeeOrTea">Coffee or Tea</label>
+        <select name="coffeeOrTea" id="coffeeOrTea">
+            <option value="coffee">Coffee</option>
+            <option value="tea">Tea</option>
+        </select>
+    </form>
+    <br>
+
+    <!-- BIOGRAPHY -->
+    <h2>Your Biography</h2>
+    <form action="" method="post">
+        <textarea name="biography" id="biography" cols="30" rows="10"></textarea>
+        </textarea>
+    </form>
+    <br>
+
+    <!-- CHAT LAYOUT -->
+    <h2>Chat Layout Settings</h2>
+    <form action="" method="post">
+        <input type="radio" name="layout" id="one" value="one">
+        <label for="one">Layout 1</label>
+        <br>
+        <input type="radio" name="layout" id="two" value="two">
+        <label for="two">Layout 2</label>
+    </form>
+    <br>
+</body>
+</html>
