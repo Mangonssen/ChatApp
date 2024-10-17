@@ -1,0 +1,148 @@
+body {
+    font-family: 'Manrope',sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    background: #238aff;
+    color: #ffffff;
+}
+
+p {
+    width: 50%;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.bio {
+    margin-left: 450px;
+    margin-bottom: 50px;
+    margin-top: -225px;
+}
+
+.bio h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-kerning: 100px;
+}
+
+a {
+    color: #3fffe9;
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 15px;
+
+}
+
+.nav {
+    margin-left: 175px;
+    margin-top: -25px;
+}
+
+img {
+    margin-left: 50px;
+    height: 50px;
+}
+
+h1 {
+    color: #ffffff;
+    font-family: 'Degular', sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 50px;  
+    margin-left: 175px;
+    margin-top: 50px;
+}
+
+h2 {
+    color: #ffffff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    margin-left: 185px;
+    margin-bottom: 40px;
+}
+
+a:hover {
+    background-color:#ffffff25;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
+}
+
+button:hover {
+    background-color:#ffffff25;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
+}
+
+.profile-pic {
+    margin-left: 125px;
+    margin-bottom: 50px;
+}
+
+.profile-pic img {
+    height: 200px;
+    width: 200px;
+    border-radius: 5%;
+    margin-top:20px;
+}
+
+
+/* Button */
+.buttons button[type="submit"] {
+    background-color:#ffffff00;
+    border: 1px solid #ffffff20;
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    offset-position: 10px;
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.buttons {
+    margin-left: 170px;
+    margin-bottom: 50px; 
+}
+
+
+/* Beschriftung */
+label {
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight:300;
+}
+
+/* Header (Logo) */
+header {
+    background: #238aff;
+    padding-top: 30px;
+    min-height: 70px;
+
+}
+
+/* Trennlinie */
+hr {
+    border: 0;
+    height: 1px;
+    width: 82%;
+    background: #ffffff20;
+    margin-bottom: 50px;
+
+}
+
+.bottom-end hr {
+    border: 0;
+    height: 1px;
+    width: 82%;
+    background: #ffffff20;
+    margin-bottom: 35px;
+}
+
+.lower-info {
+    margin-left: 175px;
+    margin-bottom: 50px;
+}
