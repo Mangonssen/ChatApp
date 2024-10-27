@@ -4,22 +4,22 @@ body {
     font-weight: 600;
     margin: 0;
     padding: 0;
-    background: #238aff;
-    color: #ffffff;
+    background: #6439FF;
+    color: #FFFFFF;
 }
 
-p, span, li, a {
-    color: #808080; /* Set non-heading text color to gray */
+p, span, li {
+    color: #808080;
     margin-left: 175px;
 }
 
-img {
+header .logo img {
     margin-left: 50px;
     height: 50px;
 }
 
 h1 {
-    color: #ffffff;
+    color: #FFFFFF;
     font-family: 'Degular', sans-serif;
     font-weight: 800;
     font-style: normal;
@@ -75,7 +75,7 @@ form input {
 
 /* Eingabefeld Mehrzeilig */
 form textarea {
-    width: 50%;
+    width: 740px;
     height: 200px;
     margin-bottom: 10px;
     margin-left: 15px;
@@ -154,7 +154,7 @@ label {
 
 /* Header (Logo) */
 header {
-    background: #238aff;
+    background: #6439FF;
     padding-top: 30px;
     min-height: 70px;
 
@@ -177,6 +177,50 @@ hr {
     background: #ffffff20;
     margin-bottom: 35px;
 }
+
+.logo:hover {
+    cursor: pointer;
+}
+
+
+/* Responsive */
+@media (max-width: 1080px) {
+    
+    form textarea {
+        width: 82%;
+    }
+}
+
+@media (max-width: 680px) {
+    
+    
+    h1, h2, p, form, button {
+        margin-left: 10%;
+    }
+
+    form textarea {
+        width: 82%;
+    }
+
+    .buttons {
+        margin-left: 10%;
+    }
+    
+}
+
+@media (max-width: 550px) {
+    
+    form input[type="text"], form select{
+        display: block;
+        margin-left:3%;
+    }
+
+    .buttons {
+        margin-left: 10%;
+    }
+    }
+    
+
 
 
 

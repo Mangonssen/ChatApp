@@ -10,7 +10,11 @@
 <body>
     <header class="site-header">
         <!--LOGO-->
-        <img src="logo.png" alt="logo" id="logo">
+        <div class="logo">
+            <a href="usersettings.html">
+                <img src="logo.png" alt="logo" id="logo" >
+            </a>
+        </div>
     </header>
     
     <!--USER SETTINGS TITLE-->
@@ -23,7 +27,7 @@
         <input type="text" name="firstname" id="firstname" required>
         <br>
         <label for="lastname">Last Name</label>
-        <input type="lastname" name="lastname" id="lastname" required>
+        <input type="text" name="lastname" id="lastname" required>
     </form>
     <br>
     
@@ -62,8 +66,8 @@
     </div>
     <!-- SAVE AND CANCEL -->
     <div class="buttons">
-    <button type="submit" id="cancel">Cancel</button>
-    <button type="submit" id="save">Save</button>
+    <button type="submit" id="cancel" onclick="window.location.href='friends.html';">Cancel</button>
+    <button type="submit" id="save" onclick="window.location.href='usersettings.html'">Save</button>
     </div>
 </body>
 </html>
