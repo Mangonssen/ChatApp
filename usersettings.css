@@ -1,16 +1,21 @@
 /* Basic CSS for User Settings */
 body {
     font-family: 'Manrope',sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     margin: 0;
     padding: 0;
-    background: #6439FF;
     color: #FFFFFF;
+    height: 100%;
+
+    background-color: #0091ff;
+    background: linear-gradient(180deg, #6439FF 0%, #cc00ff 60%);
 }
 
-p, span, li {
-    color: #808080;
-    margin-left: 175px;
+/* Header (Logo) */
+header {
+    padding-top: 30px;
+    min-height: 70px;
+
 }
 
 header .logo img {
@@ -18,13 +23,19 @@ header .logo img {
     height: 50px;
 }
 
+header .logo img:hover {
+    scale: 1.05;
+}
+
+
+
+
 h1 {
     color: #FFFFFF;
     font-family: 'Degular', sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 50px;
-    margin-bottom:20px;
     margin-left: 175px;
     margin-top: 50px;
 }
@@ -37,11 +48,27 @@ h2 {
     margin-bottom: 40px;
 }
 
-form {
+
+
+
+p, span, li {
+    color: #808080;
     margin-left: 175px;
 }
 
 
+
+
+form {
+    margin-left: 175px;
+}
+
+/* Beschriftung */
+label {
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight:300;
+}
 
 form input, textarea, select {
     border-radius: 5px;
@@ -141,33 +168,22 @@ form input[type="radio"] {
 
 .buttons {
     margin-left: 170px;
-    margin-bottom: 50px; 
+    margin-bottom: 100%; 
 }
 
 
-/* Beschriftung */
-label {
-    font-size: 15px;
-    margin-left: 15px;
-    font-weight:300;
-}
 
-/* Header (Logo) */
-header {
-    background: #6439FF;
-    padding-top: 30px;
-    min-height: 70px;
 
-}
+
 
 /* Trennlinie */
 hr {
     border: 0;
     height: 1px;
     width: 82%;
+    margin-top:-10px;
     background: #ffffff20;
     margin-bottom: 50px;
-
 }
 
 .bottom-end hr {
@@ -178,9 +194,8 @@ hr {
     margin-bottom: 35px;
 }
 
-.logo:hover {
-    cursor: pointer;
-}
+
+
 
 
 /* Responsive */

@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Profile</title>
     <link rel="stylesheet" href="profile.css">
 </head>
 <body>
     <header class="site-header">
         <!--LOGO-->
-        <img src="logo.png" alt="logo" id="logo">
+        <div class="logo">
+            <a href="usersettings.html">
+                <img src="logo.png" alt="logo" id="logo" >
+            </a>
+        </div>
     </header>
 
     <h1>Profile of Tom</h1>
@@ -19,24 +23,36 @@
         <a href="chat.html"> ← Back to Chat</a>  <a href="">× Remove Friend</a>
     </div>
 
-    <!-- Biography -->
+    <!-- profile picture overlay -->
+
+    <div class="pp-overlay">
+    </div>
+
+    <!-- profile picture -->
     
     <div class="profile-pic">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrEEkTvzmD4lzhTBkDeULM-gZNQDUZEGFOCA&s" alt="PROFILE PICTURE">
     </div>
 
-    <div class="bio">
+     <!-- biography -->
+
+     <div class="bio">
         <h3>ABOUT TOM</h3><br>
-        <p>Hallo ich bin Tom und ich mag Tee. Eigentlich heiße ich Thomas und gar nicht Tom aber sag's nicht weiter. Ich verkleide mich gerne als Shrek, weil der so grün ist. Cool! Nächstes Jahr will ich mir sogar einen eigenen Sumpf bauen, sodass mein Cosplay vollkommen wird.</p>
+        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem reiciendis eos illum officia consectetur esse quo velit maiores recusandae aperiam iusto, sapiente similique fugiat mollitia, odio eum illo vitae incidunt?</span>
     </div>
 
+    
+
+    <!-- horizontal rule -->
     <hr>
+
+    <!-- lower info -->
+
     <div class="lower-info">
         <h3>Name</h3>
-        <p>Shreg</p>
+        <p>Tom</p>
         <h3>Coffee or Tea?</h3>
-        <p>Swamp</p>
-        
+        <p>Tea</p> 
     </div>
 </body>
 </html>

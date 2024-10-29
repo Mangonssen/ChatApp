@@ -1,58 +1,43 @@
 body {
     font-family: 'Manrope',sans-serif;
-    font-size: 17px;
-    font-weight: 600;
+    font-weight: 400;
     margin: 0;
     padding: 0;
-    background: #238aff;
-    color: #ffffff;
+    color: #FFFFFF;
+    height: 100%;
+
+    background-color: #0091ff;
+    background: linear-gradient(180deg, #6439FF 0%, #cc00ff 60%);
 }
 
-p {
-    width: 1;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    
-}
-
-.bio {
-    margin-left: 450px;
-    margin-bottom: 50px;
-    margin-top: -225px;
-}
-
-.bio h3 {
-    font-family: 'Manrope', sans-serif;
-    font-size: 17px;
-    margin-bottom: 10px;
-    font-kerning: 100px;
-}
-
-a {
-    color: #3fffe9;
-    margin-right: 20px;
-    text-decoration: none;
-    font-size: 15px;
+/* Header (Logo) */
+header {
+    padding-top: 30px;
+    min-height: 70px;
 
 }
 
-.nav {
-    margin-left: 175px;
-    margin-top: -25px;
-}
-
-img {
+header .logo img {
     margin-left: 50px;
     height: 50px;
 }
 
+header .logo img:hover {
+    scale: 1.05;
+}
+
+header img {
+    margin-left: 50px;
+    height: 50px;
+}
+
+/* Headings h1-h3 */
 h1 {
-    color: #ffffff;
+    color: #FFFFFF;
     font-family: 'Degular', sans-serif;
     font-weight: 800;
     font-style: normal;
-    font-size: 50px;  
+    font-size: 50px;
     margin-left: 175px;
     margin-top: 50px;
 }
@@ -62,22 +47,41 @@ h2 {
     font-family: 'Manrope', sans-serif;
     font-size: 28px;
     margin-left: 185px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
-a:hover {
+h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+
+/* Navigation Links */
+.nav {
+    margin-left: 175px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+.nav a {
+    color: #3fffe9;
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav a:hover {
     background-color:#ffffff25;
     box-shadow: 0 6px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
 }
 
-button:hover {
-    background-color:#ffffff25;
-    box-shadow: 0 6px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
-}
 
+/* Profile Picture */
 .profile-pic {
     margin-left: 125px;
     margin-bottom: 50px;
+    display: inline-block;
 }
 
 .profile-pic img {
@@ -85,44 +89,42 @@ button:hover {
     width: 200px;
     border-radius: 5%;
     margin-top:20px;
+    margin-left: 55px;
 }
 
 
-/* Button */
-.buttons button[type="submit"] {
-    background-color:#ffffff00;
-    border: 1px solid #ffffff20;
-    padding: 5px 20px;
-    border-radius: 5px;
-    margin-left: 10px;
-    font-size: 15px;
-    font-weight: 400;
-    offset-position: 10px;
 
+
+/* Biography */
+.bio {
+    margin-left: 450px;
+    margin-top: -225px;
+    margin-bottom: 100px;
+}
+
+.bio p, span {
     font-family: 'Manrope', sans-serif;
     font-weight: 400;
-    color: #ffffff;
+    font-style: italic;
+    max-width: 70%;
+    display: inline-block;
+    color: #ffffff99;
 }
 
-.buttons {
-    margin-left: 170px;
-    margin-bottom: 50px; 
+.bio h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
 }
 
-
-/* Beschriftung */
-label {
-    font-size: 15px;
-    margin-left: 15px;
-    font-weight:300;
-}
-
-/* Header (Logo) */
-header {
-    background: #238aff;
-    padding-top: 30px;
-    min-height: 70px;
-
+.pp-overlay {
+    margin-left: 180px;
+    margin-top: 20px;
+    background: rgb(45,45,55);
+    background: linear-gradient(180deg, rgba(45,45,55,0) 0%, rgba(37,37,52,0) 60%, #6439FF70 90%, #6439FF99 100%);
+    width: 200px;
+    height: 200px;
+    border-radius: 5%;
+    position: absolute;
 }
 
 /* Trennlinie */
@@ -132,18 +134,21 @@ hr {
     width: 82%;
     background: #ffffff20;
     margin-bottom: 50px;
-
-}
-
-.bottom-end hr {
-    border: 0;
-    height: 1px;
-    width: 82%;
-    background: #ffffff20;
-    margin-bottom: 35px;
 }
 
 .lower-info {
     margin-left: 175px;
-    margin-bottom: 50px;
+    margin-bottom: 100%;
+}
+
+.lower-info h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+}
+
+.lower-info p {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #ffffff99;
 }
