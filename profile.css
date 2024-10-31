@@ -24,12 +24,33 @@ header .logo img {
 
 header .logo img:hover {
     scale: 1.05;
+    animation: logo-wiggle 1s infinite;
 }
 
 header img {
     margin-left: 50px;
     height: 50px;
 }
+
+@keyframes logo-wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
 
 /* Headings h1-h3 */
 h1 {
@@ -56,12 +77,19 @@ h3 {
     margin-bottom: 10px;
 }
 
+.title-divider hr {
+    border: 0;
+    height: 1px;
+    width: 82%;
+    margin-bottom: 50px;
+    margin-top: -10px;
+}
 
 /* Navigation Links */
 .nav {
     margin-left: 175px;
     margin-bottom: 20px;
-    margin-top: -20px;
+    margin-top: -40px;
 }
 
 .nav a {
