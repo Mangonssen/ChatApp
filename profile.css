@@ -2,23 +2,24 @@ body {
     font-family: 'Manrope',sans-serif;
     font-weight: 400;
     margin: 0;
+    margin-left: 12%;
     padding: 0;
     color: #FFFFFF;
     height: 100%;
 
     background-color: #0091ff;
-    background: linear-gradient(180deg, #6439FF 0%, #cc00ff 60%);
+    background: linear-gradient(180deg, #6439FF 0%, #cc00ff 80%);
 }
 
 /* Header (Logo) */
 header {
+    margin-left: -100px;
     padding-top: 30px;
     min-height: 70px;
 
 }
 
 header .logo img {
-    margin-left: 50px;
     height: 50px;
 }
 
@@ -28,7 +29,6 @@ header .logo img:hover {
 }
 
 header img {
-    margin-left: 50px;
     height: 50px;
 }
 
@@ -59,7 +59,6 @@ h1 {
     font-weight: 800;
     font-style: normal;
     font-size: 50px;
-    margin-left: 175px;
     margin-top: 50px;
 }
 
@@ -67,7 +66,7 @@ h2 {
     color: #ffffff;
     font-family: 'Manrope', sans-serif;
     font-size: 28px;
-    margin-left: 185px;
+    margin-left: 10px;
     margin-bottom: 20px;
 }
 
@@ -87,16 +86,21 @@ h3 {
 
 /* Navigation Links */
 .nav {
-    margin-left: 175px;
     margin-bottom: 20px;
     margin-top: -40px;
+    margin-top: -30px;
 }
 
 .nav a {
-    color: #3fffe9;
-    margin-right: 20px;
+    color: #ffffff99;
+    margin-right: 5px;
     text-decoration: none;
     font-size: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
 }
 
 .nav a:hover {
@@ -107,7 +111,7 @@ h3 {
 
 /* Profile Picture */
 .profile-pic {
-    margin-left: 125px;
+    margin-left: 10px;
     margin-bottom: 50px;
     display: inline-block;
 }
@@ -117,7 +121,6 @@ h3 {
     width: 200px;
     border-radius: 5%;
     margin-top:20px;
-    margin-left: 55px;
 }
 
 
@@ -125,8 +128,8 @@ h3 {
 
 /* Biography */
 .bio {
-    margin-left: 450px;
-    margin-top: -225px;
+    margin-left: 270px;
+    margin-top: -240px;
     margin-bottom: 100px;
 }
 
@@ -137,6 +140,8 @@ h3 {
     max-width: 70%;
     display: inline-block;
     color: #ffffff99;
+    text-align: justify;
+    
 }
 
 .bio h3 {
@@ -145,7 +150,7 @@ h3 {
 }
 
 .pp-overlay {
-    margin-left: 180px;
+    margin-left: 10px;
     margin-top: 20px;
     background: rgb(45,45,55);
     background: linear-gradient(180deg, rgba(45,45,55,0) 0%, rgba(37,37,52,0) 60%, #6439FF70 90%, #6439FF99 100%);
@@ -162,10 +167,10 @@ hr {
     width: 82%;
     background: #ffffff20;
     margin-bottom: 50px;
+    margin-left: 0%;
 }
 
 .lower-info {
-    margin-left: 175px;
     margin-bottom: 100%;
 }
 
@@ -179,4 +184,24 @@ hr {
     font-weight: 400;
     font-style: italic;
     color: #ffffff99;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+    
+    .bio {
+        display: block;
+        margin-top: -20px;
+        margin-left: 10px;
+        margin-bottom: 50px;
+    }
+
+    hr {
+        width: 82%;
+        margin-left: 0%;
+        margin-bottom: 30px;
+
+        background: #ffffff40;
+    }
 }
