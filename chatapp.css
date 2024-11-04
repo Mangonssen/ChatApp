@@ -1,0 +1,356 @@
+body {
+    font-family: 'Manrope',sans-serif;
+    font-weight: 400;
+    margin: 0;
+    margin-left: 12%;
+    padding: 0;
+    color: #FFFFFF;
+    height: 100%;
+
+    background-color: #0091ff;
+    background: linear-gradient(180deg, #6439FF 0%, #cc00ff 50%);
+}
+
+p, span, li {
+    
+}
+
+/* Header*/
+header {
+    margin-left: -100px;
+    padding-top: 30px;
+    min-height: 70px;
+}
+/* Logo (logo.png) */
+
+header .logo img {
+    height: 50px;
+}
+
+/* Logo Animation */
+header .logo img:hover {
+    scale: 1.05;
+    animation: logo-wiggle 1s infinite;
+}
+
+header img {
+    height: 50px;
+}
+
+@keyframes logo-wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+
+/* Headings h1-h3 */
+h1 {
+    color: #FFFFFF;
+    font-family: 'Degular', sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+h2 {
+    color: #ffffff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    margin-left: 10px;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+
+
+/* Trennlinie */
+hr {
+    border: 0;
+    height: 1px;
+    width: 82%;
+    margin-bottom: 50px;
+    margin-top: -10px;
+}
+
+/* Beschriftung */
+label {
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight:300;
+}
+
+/* Formulare Input, Textarea & Select */
+form input, textarea, select {
+    border-radius: 5px;
+}
+
+/* Eingabefeld Einzeilig */
+form input { 
+    width: 300px;
+    height: 12px;
+    margin-bottom: 10px;
+    margin-left: 35px;
+    padding: 10px;
+    background-color:#ffffff20;
+    border-color: #ffffff00;
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color:#ffffff;
+}
+
+/* Eingabefeld Mehrzeilig */
+form textarea {
+    width: 740px;
+    height: 200px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    background-color:#ffffff20;
+    padding-left: 20px;
+    border-color: #ffffff00;
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color:#ffffff;
+    
+}
+
+/* Eingabefeld Select */
+form select {
+    width: 325px;
+    height: 0x;
+    padding: 6px;
+    margin-left: 15px;
+    background-color:#ffffff20;
+    border-color: #ffffff00;
+
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color:#ffffff;
+}
+
+/* Optionen des Selects */
+option {
+    border: none;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color:#000000;
+}
+
+/* Radio Button */
+form input[type="radio"] {
+    margin-left: -130px;
+    margin-right: -130px;
+
+    background-color:#ffffff20;
+    border-color:#ffffff00;
+}
+
+/* Button */
+button {
+    background-color:#ffffff00;
+    border: 1px solid #ffffff20;
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    offset-position: 10px;
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+/* Formular-Hover-Effekt*/
+form input:hover, textarea:hover, select:hover {
+    background-color:#ffffff25;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
+}
+
+/* Button Hover-Effekt */
+button:hover {
+    background-color:#ffffff25;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
+}
+
+
+
+
+/* DIVS: USERSETTINGS + USERPROFILE---------------  */
+/* Navigation Links */
+.nav {
+    margin-bottom: 20px;
+    margin-top: -40px;
+}
+
+.nav a {
+    color: #ffffff99;
+    margin-right: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+}
+
+.nav a:hover {
+    background-color:#ffffff25;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
+}
+
+
+/* Profile Picture */
+.profile-pic {
+    margin-left: 10px;
+    margin-bottom: 50px;
+    /*display: inline-block;*/
+}
+
+.profile-pic img {
+    height: 200px;
+    width: 200px;
+    border-radius: 5%;
+    margin-top:20px;
+}
+
+
+/* Biography */
+
+
+.bio {
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.bio span {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    max-width: 70%;
+    display: inline-block;
+    color: #ffffff99;
+    text-align: justify;
+    
+}
+
+.pp-overlay {
+    margin-left: 10px;
+    margin-top: 20px;
+    background: rgb(45,45,55);
+    background: linear-gradient(180deg, rgba(45,45,55,0) 0%, rgba(37,37,52,0) 60%, #6439FF70 90%, #6439FF99 100%);
+    width: 200px;
+    height: 200px;
+    border-radius: 5%;
+    position: absolute;
+}
+
+/* Trennlinie */
+hr {
+    border: 0;
+    height: 1px;
+    width: 82%;
+    background: #ffffff20;
+    margin-bottom: 50px;
+    margin-left: 0%;
+    
+}
+
+.lower-info {
+    margin-top: 10px;
+    margin-bottom: 100%;
+    margin-left: 15px;
+}
+
+.lower-info h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+}
+
+.lower-info p {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #ffffff99;
+}
+
+.buttons {
+    margin-bottom: 100%; 
+}
+
+/* DIVS: CHAT */
+
+/* Chat-Container */
+.chat {
+    margin-left: 10px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.chat p {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #ffffff99;
+    display: inline-block;
+
+    margin-top: 0px;
+    padding: 10px;
+    background: #FFFFFF30;
+    border-radius: 10px;
+}
+
+.chat-input {
+    margin-top: 100px;
+    margin-bottom: 100%;
+    margin-left: -35px;
+}
+
+
+
+
+
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+    
+
+
+    hr {
+        width: 82%;
+        margin-left: 0%;
+        margin-bottom: 30px;
+
+        background: #ffffff40;
+    }
+}
