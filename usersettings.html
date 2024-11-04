@@ -22,12 +22,14 @@
     <hr tag="heading-divider">
     <!-- GENERAL SETTINGS-->
     <h2>General Settings</h2>
-    <form action="usersettings.php" method="post">
+
+    <fieldset>
+    <form action="" method="post">
         <label for="firstname">First Name</label>
-        <input type="text" name="firstname" id="firstname" required>
+        <input type="text" name="firstname" id="firstname" required placeholder="First Name">
         <br>
         <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" id="lastname" required>
+        <input type="text" name="lastname" id="lastname" required placeholder="Last Name">
     </form>
     <br>
     
@@ -41,9 +43,11 @@
             </select>
     </form>
     <br>
+    </fieldset>
 
     <!-- BIOGRAPHY -->
     <h2>Your Biography</h2>
+
     <form action="" method="post">
         <textarea name="biography" id="biography" cols="30" rows="10"></textarea>
         </textarea>
@@ -52,6 +56,10 @@
 
     <!-- CHAT LAYOUT -->
     <h2>Chat Layout Settings</h2>
+
+    <div class="layout">
+
+    <fieldset>
     <form action="" method="post">
         <input type="radio" name="layout" id="one" value="one">
         <label for="one">Layout 1</label>
@@ -61,6 +69,8 @@
         <label for="two">Layout 2</label>
         
     </form>
+    </fieldset>
+    </div>
     <br>
 
     <div class="bottom-end">
@@ -69,7 +79,7 @@
     <!-- SAVE AND CANCEL -->
     <div class="buttons">
     <button type="submit" id="cancel" onclick="window.location.href='friends.html';">Cancel</button>
-    <button type="submit" id="save" onclick="window.location.href='usersettings.html'">Save</button>
+    <button type="submit" id="save" onclick="window.location.href='profile.html'">Save</button>
     </div>
 </body>
 </html>
