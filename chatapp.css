@@ -1,28 +1,40 @@
 body {
     font-family: 'Manrope',sans-serif;
     font-weight: 400;
-    margin: 0;
-    margin-left: 12%;
     padding: 0;
     color: #FFFFFF;
     height: 100%;
 
     background-color: #0091ff;
-    background: linear-gradient(180deg, #6439FF 0%, #cc00ff 95%);
+    background: linear-gradient(180deg, #394dff 0%, rgb(0, 183, 255) 95%);
     min-height: 100vh;
 }
+
+img[class="icon"] {
+    width: 40px;
+    margin-right: 20px;
+}
+
+img[alt="login"] {
+    margin-top: 0px;
+}
+
+.heading {
+    
+    text-align: center;
+    margin-top: 20px;
+}
+
 
 
 /* Header*/
 header {
-    margin-left: -7%;
     padding-top: 30px;
     min-height: 70px;
 }
 /* Logo (logo.png) */
 header .logo {
     display: inline-block;
-    margin-left: 10px;
 }
 
 header .logo img {
@@ -62,21 +74,20 @@ h1 {
     font-weight: 800;
     font-style: normal;
     font-size: 50px;
-    margin-top: 50px;
+
+    text-align: center;
+    display: inline-block;
 }
 
 h2 {
     color: #ffffff;
     font-family: 'Manrope', sans-serif;
     font-size: 28px;
-    margin-left: 10px;
-    margin-bottom: 40px;
 }
 
 h3 {
     font-family: 'Manrope', sans-serif;
     font-size: 17px;
-    margin-bottom: 10px;
 }
 
 
@@ -86,8 +97,6 @@ hr {
     border: 0;
     height: 1px;
     width: 82%;
-    margin-bottom: 50px;
-    margin-top: -10px;
 }
 
 /* Beschriftung */
@@ -97,7 +106,6 @@ label {
     font-weight:300;
     text-align: right;
     display: inline-block;
-    margin-right: 20px;
 }
 
 /* Formulare Input, Textarea & Select */
@@ -109,7 +117,6 @@ form input, textarea, select {
 input { 
     width: 300px;
     height: 12px;
-    margin-bottom: 10px;
     padding: 10px;
     background-color:#ffffff20;
     border-color: #ffffff00;
@@ -124,8 +131,6 @@ input {
 form textarea {
     width: 740px;
     height: 200px;
-    margin-bottom: 10px;
-    margin-left: 15px;
     background-color:#ffffff20;
     padding-left: 20px;
     border-color: #ffffff00;
@@ -163,8 +168,6 @@ option {
 
 /* Radio Button */
 form input[type="radio"] {
-    margin-left: -130px;
-    margin-right: -130px;
 
     background-color:#ffffff20;
     border-color:#ffffff00;
@@ -176,7 +179,6 @@ button {
     border: 1px solid #ffffff20;
     padding: 5px 20px;
     border-radius: 5px;
-    margin-left: 10px;
     font-size: 15px;
     font-weight: 400;
     offset-position: 10px;
@@ -219,9 +221,6 @@ ul {
     background-color: #ffffff20;
     border-radius: 10px;
     width: 60%;
-
-    margin-bottom: 50px;
-    margin-top: 25px;
 }
 
 li {
@@ -236,7 +235,6 @@ ol {
     border-radius: 10px;
     width: 60%;
 
-    margin-bottom: 50px;
 }
 
 span {
@@ -255,16 +253,11 @@ span {
 
 /* DIVS: USERSETTINGS + USERPROFILE---------------  */
 /* Navigation Links */
-.nav {
-    margin-bottom: 20px;
-    margin-top: -40px;
-}
 
 .nav a {
     color: #ffffff99;
     background-color: #ffffff10;
 
-    margin-right: 5px;
     text-decoration: none;
     font-size: 15px;
     padding-left: 15px;
@@ -282,8 +275,6 @@ span {
 
 /* Profile Picture */
 .profile-pic {
-    margin-left: 10px;
-    margin-bottom: 50px;
     /*display: inline-block;*/
 }
 
@@ -291,7 +282,6 @@ span {
     height: 200px;
     width: 200px;
     border-radius: 5%;
-    margin-top:20px;
 }
 
 
@@ -299,14 +289,9 @@ span {
 
 
 .bio {
-    margin-left: 10px;
-    margin-top: 20px;
-    margin-bottom: 50px;
 }
 
 .pp-overlay {
-    margin-left: 10px;
-    margin-top: 20px;
     background: rgb(45,45,55);
     background: linear-gradient(180deg, rgba(45,45,55,0) 0%, rgba(37,37,52,0) 60%, #6439FF70 90%, #6439FF99 100%);
     width: 200px;
@@ -321,15 +306,10 @@ hr {
     height: 1px;
     width: 82%;
     background: #ffffff20;
-    margin-bottom: 50px;
-    margin-left: 0%;
     
 }
 
 .lower-info {
-    margin-top: 10px;
-    margin-bottom: 100%;
-    margin-left: 15px;
 }
 
 .lower-info h3 {
@@ -345,8 +325,6 @@ hr {
 }
 
 .buttons {
-    margin-top: 50px; 
-    margin-bottom: 50px;
 }
 
 .layout label {
@@ -361,9 +339,6 @@ hr {
 
 /* Chat-Container */
 .chat {
-    margin-left: 10px;
-    margin-top: 100px;
-    margin-bottom: 50px;
 }
 
 .chat p {
@@ -372,7 +347,6 @@ hr {
     color: #ffffff99;
     display: inline-block;
 
-    margin-top: 0px;
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -381,15 +355,13 @@ hr {
 }
 
 .chat-input {
-    margin-top: 100px;
 }
 
 /* DIVS REGISTER ---------------*/
 
 .icon img {
 
-    margin-top: 50px;
-    border-radius: 50%;
+    display: inline-block;
     height: 75px;
 }
 
@@ -400,8 +372,6 @@ hr {
 /* DIVS LOGOUT ---------------*/
 
 .goodbye {
-    margin-top: 25px;
-    margin-bottom: 50px;
 }
 
 .goodbye span {
@@ -416,8 +386,6 @@ hr {
 
 ul a {
     color: #ffffff99;
-
-    margin-right: 5px;
     text-decoration: none;
 }
 
@@ -433,8 +401,6 @@ ul a {
     form textarea {
         width: 80%;
         height: 200px;
-        margin-bottom: 10px;
-        margin-left: 15px;
         background-color:#ffffff20;
         padding-left: 20px;
         border-color: #ffffff00;
@@ -449,19 +415,16 @@ ul a {
 @media (max-width: 746px) {
     ol button {
         display: block;
-        margin-top: 10px;
     }
 }
 @media (max-width: 706px) {
 
     form input[type="text"], form select{
         display: block;
-        margin-left:3%;
     }
 
     .data-entry label {
         text-align: left;
-        margin-left: 15px;
     }
 
     fieldset {
@@ -470,8 +433,6 @@ ul a {
 
     .chat-input button {
         display: inline-block;
-        margin-left: 3%;
-        margin-top: 20px;
     }
 }
 
@@ -479,13 +440,11 @@ ul a {
 
     form input[type="text"], form select{
         display: block;
-        margin-left:3%;
     }
 
     label {
         text-align: left;
-        margin-left: 15px;
-    }
+        }
 
     fieldset {
         padding-left: 20px;

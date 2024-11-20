@@ -7,51 +7,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="chatapp.css">
+  <link rel="stylesheet" href="chatapp-css.css">
   <link rel="stylesheet" href="https://use.typekit.net/ngh4elb.css">
+  <link rel="icon" href="logo.ico" type="image/x-icon">
 
 </head>
-
+ 
 <body>
 
+  <div class="page-container">
+
   <header class="site-header">
-    <!--LOGO-->
-    <div class="logo">
         <a href="profile.html">
             <img src="logo.png" alt="logo" id="logo" >
         </a>
-    </div>
-</header>
+  </header>
 
+  <div class="heading-container-centered">
+    <img src="key-icon.png" alt="login" class="title-icon">
+    <h1>Please sign in</h1>
+  </div>
 
-<div class="icon">
-<img src="chat.png" alt="chat">
-</div>
-<h1>Please sign in</h1>
+  <div class="data-entry">
+  <form action="friends.html" method="post">
 
-
-
-  <fieldset>
-
-    <legend>ENTER DATA</legend>
-    <form action="" method="post">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" required placeholder="Username">
+    <div class="input-set">
+      <label for="username">Username</label> 
       <br>
-      <label for="password">Password</label>
-      <input type="text" name="password" id="password" required placeholder="Password">
-  </form>
-  <br>
+      <input type="text" name="username" id="username" required placeholder="Username">
+    </div>
 
-  </fieldset>
+    <div class="input-set">
+      <label for="password">Password</label>
+      <br>
+      <input type="text" name="password" id="password" required placeholder="Password">
+    </div>
+      <br>
 
   <div class="buttons">
     
-    <button type="submit" onclick="window.location.href='register.html';">Register</button>
-    <button type="submit" onclick="window.location.href='friends.html';">Login</button>
+    <button type="button">Register</button>
+    <button type="submit">Login</button>
   </div>
 
-
+</form>
+</div>
 
 </body>
 

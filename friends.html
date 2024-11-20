@@ -7,29 +7,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Friend List</title>
-  <link rel="stylesheet" href="chatapp.css">
+  <link rel="stylesheet" href="chatapp-css.css">
   <link rel="stylesheet" href="https://use.typekit.net/ngh4elb.css">
+  <link rel="icon" href="logo.ico" type="image/x-icon">
 
 </head>
 
 <body>
 
-<header class="site-header">
-    <!--LOGO-->
-    <div class="logo">
-        <a href="profile.html">
-            <img src="logo.png" alt="logo" id="logo" >
-        </a>
-    </div>
+<div class="page-container">
+
+
+  <header class="site-header">
+    <a href="profile.html">
+        <img src="logo.png" alt="logo" id="logo" >
+    </a>
 </header>
 
-<h1>Friends</h1>
+
+<div class="heading-container-left">
+  <img src="friends.png" alt="friends icon" class="title-icon">
+  <h1>Friends</h1>
+</div>
 
 <hr>
 
-<div class="nav">
+<nav class="links">
   <a href="logout.html"> ← Logout</a>  <a href="usersettings.html">* Settings</a>
-</div>
+</nav>
 
 <ul>
 
@@ -48,7 +53,7 @@
 
 <ol>
 
-Friend request from <b>Track</b> <button type="Request">Accept</button> <button type="Request">Reject</button></li>
+<li>Friend request from <b>Track</b> <button type="Request">Accept</button> <button type="Request">Reject</button></li>
 
 </ol>
 
@@ -58,10 +63,11 @@ Friend request from <b>Track</b> <button type="Request">Accept</button> <button 
 
 <div class="add-friend">
 
-<input type="text" placeholder="Add Friend to List"> 
+  <input type="text" name="addfriend" id="addfriend" required placeholder="Add Friend to List"> 
 
 <button type="add">Add</button>
 
+</div>
 </div>
 
 </body>

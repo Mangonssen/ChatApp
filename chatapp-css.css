@@ -1,0 +1,307 @@
+body {
+    
+    background: linear-gradient(180deg, #1c1c1d 0%, rgb(32, 33, 33) 95%);
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'Manrope',sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.page-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+header {
+    margin-top: 25px;
+    width: 100%;
+}
+
+header img {
+    height: 50px;
+}
+
+@keyframes logo-wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+header img:hover {
+    scale: 1.05;
+    animation: logo-wiggle 1s infinite;
+}
+
+
+
+
+/* titles / headings */
+
+.heading-container-left {
+    
+    margin-top: 50px;
+    
+    display: flex;
+    align-items: center;
+}
+
+.heading-container-centered {
+
+    margin-top: 50px;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+}
+
+.title-icon {
+    width: 40px;
+    margin-right: 20px;
+}
+
+
+/* headings */
+h1 {
+    text-align: center;
+
+    color: #FFFFFF;
+    font-family: 'Degular', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+}
+
+
+.data-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.data-entry-left {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.data-entry form {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+
+
+input { 
+    width: 300px;
+    height: 12px;
+    padding: 10px;
+    background-color:#ffffff20;
+    border-color: #ffffff00;
+    border-radius: 5px;
+
+    margin-top:5px;
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color:#ffffff;
+}
+
+input:focus {
+    outline: none;
+}
+
+.input-set {
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+button {
+    background-color:#ffffff50;
+    border: 1px solid #ffffff50;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    offset-position: 10px;
+
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+
+    margin: 5px;
+}
+
+button:hover {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+
+    background-color:#ffffff25;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
+}
+
+nav[class="buttons"] {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav button {
+    margin-right: 10px;
+}
+
+nav[class="links"] {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+nav[class="links-centered"] {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+nav a {
+    margin-right: 10px;
+    text-decoration: underline;
+    color: #ffffff90;
+}
+
+hr {
+    width: 100%;
+    border: 1px solid #ffffff15;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin-bottom:20px;
+    padding: 20px;
+    overflow: hidden;
+    background-color:#ffffff20;
+
+    border-radius: 5px;
+}
+
+li {
+    padding: 10px;
+
+    border-radius: 5px;
+
+    margin-bottom: 10px;
+}
+
+li:hover {
+    background-color: #ffffff20;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.01);
+}
+
+li a {
+   
+
+   color: #ffffff;
+   text-decoration: none;
+   
+}
+
+ol {
+    list-style-type: none;
+    background-color:#ffffff20;
+
+    border-radius: 5px;
+}
+
+.chat-message p[class="chat-name"] {
+    font-weight: 800;
+
+}
+
+.chat-message p[class="chat-message"] {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+    background-color:#ffffff20;
+
+}
+
+.chat-input {
+    margin-top:50px;
+}
+
+.goodbye-message {
+    text-align: center;
+}
+
+.profile-pic img {
+    width: 400px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.bio {
+    margin-top: 50px;
+}
+
+.bio p {
+    background-color:#ffffff20;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.lower-info {
+    margin-top: 50px;
+}
+
+
+
+
