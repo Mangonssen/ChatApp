@@ -55,8 +55,10 @@ function usernameExists(username) {
         if (xmlhttp.readyState == 4) {
             if (xmlhttp.status == 204) {
                 console.log("Exists");
+                return true;
             } else if (xmlhttp.status == 404) {
                 console.log("Does not exist");
+                return false;
             }
         }
     };
