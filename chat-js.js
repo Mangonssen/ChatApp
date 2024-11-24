@@ -84,7 +84,7 @@ function sendMessage(e) {
 
     let data = {
         message: msgContent,
-        to: "Jerry"
+        to: getChatpartner()
     };
 
     let jsonString = JSON.stringify(data); // Serialize as JSON
