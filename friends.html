@@ -36,22 +36,19 @@
   <a href="logout.html"> ← Logout</a>  <a href="usersettings.html">* Settings</a>
 </nav>
 
-<ul>
+<ul id="friendlist">
 
-  <li class="friendnot"><a class="friend" href="chat.html">Tom (3)</a></li>
-  <li class="friendnot"><a class="friend" href="chat.html">Marvin (1)</a></li>
-  <li class="friendnot"><a class="friend" href="chat.html">Tick</a></li>
-  <li class="friendnot"><a class="friend" href="chat.html">Trick</a></li>
 
 </ul>
 
 <hr> 
 <div class="friend-requests">
+
 <h2>New Requests</h2>
 
 
 
-<ol>
+<ol id="friendRequests">
 
 <li>Friend request from <b>Track</b> <button type="Request">Accept</button> <button type="Request">Reject</button></li>
 
@@ -66,12 +63,15 @@
 
 <input type="text" name="addfriend" id="addfriend" required placeholder="Add Friend to List"> 
 
-<button type="add">Add</button>
+<button id="addfriend" type="add">Add</button>
 </form>
 
 </div>
 </div>
-
+<script src="mainJS.js"></script>
+<script src="friendlist-js.js">
+  
+</script>
 </body>
 
 </html>
