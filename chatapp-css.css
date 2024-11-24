@@ -154,7 +154,7 @@ input:focus {
     margin-top: 20px;
 }
 
-button {
+button, a {
     background-color:#ffffff50;
     border: 1px solid #ffffff50;
     padding: 5px 20px;
@@ -162,7 +162,8 @@ button {
     font-size: 15px;
     font-weight: 400;
     offset-position: 10px;
-
+    
+    text-decoration: none;
     font-family: 'Manrope', sans-serif;
     font-weight: 400;
     color: #ffffff;
@@ -170,7 +171,7 @@ button {
     margin: 5px;
 }
 
-button:hover {
+button:hover, a:hover {
     border: 1px solid #ffffff;
     color: #ffffff;
 
