@@ -34,19 +34,19 @@
 
       <form action="friends.html" id="registerForm" onsubmit="checkForm(); return false;" method="get">
         <div class="input-set">
-          <label for="username">Username</label>
+          <label for="username">Username</label><span id="usernameError" class="error-message"></span>
           <br>
           <input type="text" name="username" id="username" required placeholder="Username">
         </div>
 
         <div class="input-set">
-          <label for="password">Password</label>
+          <label for="password">Password</label><span id="passwordError" class="error-message"></span>
           <br>
           <input type="password" name="password" id="password" required placeholder="Password">
         </div>
 
         <div class="input-set">
-          <label for="confirm-password">Confirm Password</label>
+          <label for="confirm-password">Confirm Password</label><span id="confirmPasswordError" class="error-message"></span>
           <br>
           <input type="password" name="confirm-password" id="confirm-password" required placeholder="Confirm Password">
         </div>
