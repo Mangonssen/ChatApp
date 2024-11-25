@@ -72,7 +72,7 @@ function passwordCheck(passwordValue, passwordRepeatValue) {
 async function usernameExists(username) {
     try {
         const response = await fetch(
-            `https://online-lectures-cs.thi.de/chat/2b25b36f-1ef4-4ce3-8020-33b3665241a5/${username}`
+            `https://online-lectures-cs.thi.de/chat/54f425ca-c5bd-4a9a-aa30-2b7107f6dbcb/${username}`
         );
         return response.status === 204;
     } catch (error) {
