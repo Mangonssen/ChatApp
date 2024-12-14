@@ -5,6 +5,10 @@ class User implements JsonSerializable {
 
 
     private $username;
+    private $firstname;
+    private $lastname;
+    private $cot;
+    private $bio;
     
     public function __construct($username = null) {
         $this->username = $username;
@@ -12,6 +16,34 @@ class User implements JsonSerializable {
 
     public function getUsername() {
         return $this->username;
+    }
+
+    public function setUsername($username) {
+        $this->username = $username;
+    }
+
+    public function getFirstname() {
+        return $this->firstname;
+    }
+
+    public function setFirstname($firstname) {
+        $this->firstname = $firstname;
+    }
+
+    public function getLastname() {
+        return $this->lastname;
+    }
+
+    public function setLastname($lastname) {
+        $this->lastname = $lastname;
+    }
+
+    public function getCot() {
+        return $this->cot;
+    }
+
+    public function setCot($cot) {
+        $this->cot = $cot;
     }
 
     public function jsonSerialize():mixed {
@@ -26,5 +58,7 @@ class User implements JsonSerializable {
             }
         return $user;
     }
+
+   
 }
 ?>
