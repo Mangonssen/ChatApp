@@ -9,6 +9,9 @@ class User implements JsonSerializable {
     private $lastname;
     private $cot;
     private $bio;
+    private $layout;
+
+    private $chat_token;
     
     public function __construct($username = null) {
         $this->username = $username;
@@ -58,7 +61,5 @@ class User implements JsonSerializable {
             }
         return $user;
     }
-
-   
 }
 ?>
