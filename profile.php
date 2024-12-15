@@ -17,7 +17,7 @@
     <header class="site-header">
         <!--LOGO-->
         <div class="logo">
-            <a href="chat.html">
+            <a href="chat.php">
                 <img src="logo.png" alt="logo" id="logo" >
             </a>
         </div>
@@ -30,7 +30,7 @@
 
     <!-- Navigation -->
     <nav class="links">
-        <a href="chat.html"> ← Back to Chat</a>  <a href="">× Remove Friend</a>
+        <a href="chat.php"> ← Back to Chat</a>  <a href="">× Remove Friend</a>
     </nav>
     <!-- profile picture -->
     

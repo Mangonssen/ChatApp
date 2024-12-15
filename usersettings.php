@@ -14,7 +14,7 @@
     <header class="site-header">
         <!--LOGO-->
         <div class="logo">
-            <a href="profile.html">
+            <a href="profile.php">
                 <img src="logo.png" alt="logo" id="logo" >
             </a>
         </div>
@@ -33,7 +33,7 @@
 
     <div class="data-entry-left">
 
-        <form action="friends.html" method="post">
+        <form action="friends.php" method="post">
 
           <div class="input-set">
             <label for="firstname">First Name</label> 
@@ -90,8 +90,8 @@
     
     <!-- SAVE AND CANCEL -->
     <div class="buttons">
-    <button type="submit" id="cancel" onclick="window.location.href='friends.html';">Cancel</button>
-    <button type="submit" id="save" onclick="window.location.href='profile.html'">Save</button>
+    <button type="submit" id="cancel" onclick="window.location.href='friends.php';">Cancel</button>
+    <button type="submit" id="save" onclick="window.location.href='profile.php'">Save</button>
     </div>
     </form>
 

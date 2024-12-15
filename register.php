@@ -19,7 +19,7 @@
   <div class="page-container">
 
     <header class="site-header">
-      <a href="profile.html">
+      <a href="profile.php">
         <img src="logo.png" alt="logo" id="logo">
       </a>
     </header>
@@ -32,7 +32,7 @@
 
     <div class="data-entry">
 
-      <form action="friends.html" id="registerForm" onsubmit="checkForm(); return false;" method="get">
+      <form action="friends.php" id="registerForm" onsubmit="checkForm(); return false;" method="get">
         <div class="input-set">
           <label for="username">Username</label><span id="usernameError" class="error-message"></span>
           <br>
@@ -58,7 +58,7 @@
 
     <div class="buttons">
 
-      <button type="cancel" onclick="window.location.href='login.html';">Cancel</button>
+      <button type="cancel" onclick="window.location.href='login.php';">Cancel</button>
       <button type="submit">Create Account</button>
     </div>
     </form>

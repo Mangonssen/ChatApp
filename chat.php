@@ -15,7 +15,7 @@
 
         <!-- Header mit Logo -->
         <header class="site-header">
-            <a href="profile.html">
+            <a href="profile.php0">
                 <img src="logo.png" alt="logo" id="logo" >
             </a>
         </header>
@@ -28,8 +28,8 @@
 
     <!-- Navigationslinks -->
     <nav class="links">
-        <a href="friends.html">← Back</a>
-        <a href="profile.html">Profile</a>
+        <a href="friends.php">← Back</a>
+        <a href="profile.php">Profile</a>
         <a href="">Remove Friend</a>
     </nav>
 
