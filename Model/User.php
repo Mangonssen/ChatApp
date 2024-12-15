@@ -10,6 +10,7 @@ class User implements JsonSerializable {
     public $cot;
     public $bio;
     public $layout;
+    private $history;
 
     private $chat_token;
     
@@ -77,5 +78,11 @@ class User implements JsonSerializable {
         }
         return $user;
     }
+
+    public function getToken() {
+        return $this->chat_token;
+    }
+
+    
 }
 ?>

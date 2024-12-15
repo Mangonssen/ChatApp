@@ -392,6 +392,11 @@ textarea {
     color:#ffffff;
 }
 
+.input-set-radio{
+    width: 10px;
+
+}
+
 .error {
     border: 2px solid red;
 }

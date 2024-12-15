@@ -1,3 +1,23 @@
+<?php
+require("start.php");
+require_once("Utils/BackendService.php");
+require_once("Model/User.php");
+
+$service = new Utils\BackendService(CHAT_SERVER_URL, CHAT_SERVER_ID);
+
+if (!isset($_SESSION['user']) && $_SESSION['user'] !== '') {
+    header("Location: login.php");
+    exit;
+} else {
+    $user = $backendService->loadUser($_GET['username']);
+    //$user ist nun ein user-objekt, kein array mehr
+}
+
+
+$user = $service->loadUser($_SESSION['user']['username']);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +44,7 @@
     </header>
 
     <div class="heading-container-left">
-        <h1>Profile of Tom</h1>
+        <h1>Profile of <?php echo $user->getUsername()?></h1>
     </div>
 
     <hr>
@@ -43,17 +63,17 @@
      <!-- biography -->
 
     <div class="bio">
-        <h3>ABOUT TOM</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem reiciendis eos illum officia consectetur esse quo velit maiores recusandae aperiam iusto, sapiente similique fugiat mollitia, odio eum illo vitae incidunt?</p>
+        <h3>ABOUT <?php echo strtoupper($user->getUsername()) ?></h3>
+        <p><?php echo $user->getBio()?></p>
     </div>
     
     <!-- lower info -->
 
     <div class="lower-info">
         <h3>Name</h3>
-        <p>Tom</p>
+        <p><?php echo $user->getFirstname()." ".$user->getLastname()?></p>
         <h3>Coffee or Tea?</h3>
-        <p>Tea</p> 
+        <p><?php echo ucfirst($user->getCot()) ?></p> 
     </div>
 
    
