@@ -23,7 +23,9 @@
         </div>
     </header>
 
-    
+    <div class="heading-container-left">
+        <h1>Profile of Tom</h1>
+    </div>
 
     <hr>
     
