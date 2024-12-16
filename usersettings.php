@@ -9,7 +9,7 @@ if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
     header("Location: login.php");
     exit;
 } else {
-    $user = $backendService->loadUser($_SESSION['user']['username']);
+    $user = $backendService->loadUser($_SESSION['user']);
 }
 ?>
 
@@ -173,20 +173,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user->setLayout($_POST['layout']);
 
     //SESSION UPDATEN
-    $_SESSION['user']['firstname'] = $user->getFirstname();
-    $_SESSION['user']['lastname'] = $user->getLastname();
-    $_SESSION['user']['bio'] = $user->getBio();
-    $_SESSION['user']['cot'] = $user->getCot();
-    $_SESSION['user']['layout'] = $user->getLayout();
+    
+    $backendService->loadUser($_SESSION['user'])->setFirstname($user->getFirstname());
+    $backendService->loadUser($_SESSION['user'])->setLastname($user->getLastname());
+    $backendService->loadUser($_SESSION['user'])->setBio($user->getBio());
+    $backendService->loadUser($_SESSION['user'])->setCot($user->getCot());
+    $backendService->loadUser($_SESSION['user'])->setLayout($user->getLayout());
+    
+    //$_SESSION['user']['firstname'] = $user->getFirstname();
+    //$_SESSION['user']['lastname'] = $user->getLastname();
+    //$_SESSION['user']['bio'] = $user->getBio();
+    //$_SESSION['user']['cot'] = $user->getCot();
+    //$_SESSION['user']['layout'] = $user->getLayout();
 
     $backendService->saveUser($user);
 
-    $user = Model\User::fromJSON($_SESSION['user']);
+    $user = Model\User::fromJSON($backendService->loadUser($_SESSION['user']));
 
     // Umleitung zur Profilseite mit neuen Parametern
     header("Location: profile.php?username=" . $user->getUsername());
     exit;
 
 }
+
 ?>
 </html>
