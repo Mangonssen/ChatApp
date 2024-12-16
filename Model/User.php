@@ -5,14 +5,16 @@ class User implements JsonSerializable {
 
     //Properties
     private $username;
-    public $firstname;
-    public $lastname;
-    public $cot;
-    public $bio;
-    public $layout;
+    private $firstname;
+    private $lastname;
+    private $cot;
+    private $bio;
+    private $layout;
     private $history;
-
+    private $friends;
+   
     private $chat_token;
+    
     
     public function __construct($username = null) {
         $this->username = $username;
@@ -83,6 +85,29 @@ class User implements JsonSerializable {
         return $this->chat_token;
     }
 
+    public function addToHistory($event) {
+        $this->history[] = $event;
+    }
+
+    public function getHistory() {
+        return $this->history;
+    }
+
+    public function debugClearHistory() {
+        $this->history = null;
+    }
+
+    public function addToFriends($user) {
+        $this->friends[] = $user;
+    }
+
+    public function getFriends() {
+        return $this->friends;
+    }
+
+    public function debugClearFriends() {
+        $this->friends = null;
+    }
     
 }
 ?>

@@ -3,18 +3,17 @@ require("start.php");
 require_once("Utils/BackendService.php");
 require_once("Model/User.php");
 
-$service = new Utils\BackendService(CHAT_SERVER_URL, CHAT_SERVER_ID);
+$backendService = new Utils\BackendService(CHAT_SERVER_URL, CHAT_SERVER_ID);
 
 if (!isset($_SESSION['user']) && $_SESSION['user'] !== '') {
     header("Location: login.php");
     exit;
-} else {
+} else if($_GET['username'] !== ''){
     $user = $backendService->loadUser($_GET['username']);
-    //$user ist nun ein user-objekt, kein array mehr
+} else {
+    header("Location: friends.html");
+    exit;
 }
-
-
-$user = $service->loadUser($_SESSION['user']['username']);
 
 ?>
 
@@ -37,9 +36,6 @@ $user = $service->loadUser($_SESSION['user']['username']);
     <header class="site-header">
         <!--LOGO-->
         <div class="logo">
-            <a href="chat.html">
-                <img src="logo.png" alt="logo" id="logo" >
-            </a>
         </div>
     </header>
 
@@ -52,7 +48,8 @@ $user = $service->loadUser($_SESSION['user']['username']);
 
     <!-- Navigation -->
     <nav class="links">
-        <a href="chat.html"> ← Back to Chat</a>  <a href="">× Remove Friend</a>
+        <a href="chat.php"> ← Back to Chat</a>  <a href="friends.php?action=remove_friend&friend=<?php echo urlencode($friend); ?>">× Remove Friend</a>
+
     </nav>
     <!-- profile picture -->
     
@@ -76,9 +73,40 @@ $user = $service->loadUser($_SESSION['user']['username']);
         <p><?php echo ucfirst($user->getCot()) ?></p> 
     </div>
 
-   
-
+    <?php
+//CHANGE HISTORY HTML
+echo "
+<div class='change-history'>
+    <h3 class='change-history-header'> CHANGE HISTORY </h3>
+    <ul class='change-history-list'>";
+    if($user->getHistory() !== null)
+    {foreach($user->getHistory() as $history){
+        echo "<li class='change-history-item'>".$history."</li>";
+    }} else {
+        echo "<li class='change-history-item'>No changes made yet.</li>";
+    }
+    echo "</ul></div>";
+    
+?>
 
     </div>
 </body>
 </html>
+<?php
+if (isset($_GET['action']) && $_GET['action'] === 'remove_friend' && isset($_GET['friend'])) {
+    $friend = $_GET['friend'];
+
+    try {
+        // removeFriend-Methode aufrufen
+        if ($backendService->removeFriend($friend)) {
+            echo "Friend successfully removed!";
+        } else {
+            echo "Failed to remove friend. Please try again.";
+        }
+    } catch (Exception $e) {
+        // Fehlerbehandlung
+        error_log("Error removing friend: " . $e->getMessage());
+        echo "An error occurred. Please try again later.";
+    }
+}
+?>

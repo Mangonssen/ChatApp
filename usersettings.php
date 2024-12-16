@@ -5,22 +5,12 @@ require_once("Model/User.php");
 
 $backendService = new Utils\BackendService(CHAT_SERVER_URL, CHAT_SERVER_ID);
 
-if (!isset($_SESSION['user']) && $_SESSION['user'] !== '') {
+if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
     header("Location: login.php");
     exit;
 } else {
     $user = $backendService->loadUser($_SESSION['user']['username']);
-    //$user ist nun ein user-objekt, kein array mehr
 }
-
-echo "<b>User:</b> <br>";
-var_dump($user);
-
-echo $user->getBio();
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -58,22 +48,18 @@ echo $user->getBio();
 
     <div class="data-entry-left">
 
-        <form action="usersettings.php" method="post">
+        <form method="POST">
 
         <div class="input-set">
             <label for="firstname">First Name</label> 
             <br>
-            <input type="text" name="firstname" id="firstname" required placeholder="First Name" value=
-            "<?php if ($user->getFirstname() !== null) {echo $user->getFirstname();}?>"
-            >
+            <input type="text" name="firstname" id="firstname" required placeholder="First Name" value="<?php echo htmlspecialchars($user->getFirstname()); ?>">
         </div>
         
         <div class="input-set">
             <label for="lastname">Last Name</label>
             <br>
-            <input type="text" name="lastname" id="lastname" required placeholder="Last Name" value=
-            "<?php if ($user->getLastname() !== null) {echo $user->getLastname();}?>"
-            >
+            <input type="text" name="lastname" id="lastname" required placeholder="Last Name" value="<?php echo htmlspecialchars($user->getLastname()); ?>">
         </div>
 
         <div class = "input-set">
@@ -128,27 +114,79 @@ echo $user->getBio();
     </div>
     </form>
 
+
+    <?php
+//CHANGE HISTORY HTML
+echo "
+<div class='change-history'>
+    <h3 class='change-history-header'> CHANGE HISTORY </h3>
+    <ul class='change-history-list'>";
+    if($user->getHistory() !== null)
+    {foreach($user->getHistory() as $history){
+        echo "<li class='change-history-item'>".$history."</li>";
+    }} else {
+        echo "<li class='change-history-item'>No changes made yet.</li>";
+    }
+    echo "</ul></div>";
+    
+?>
+
 </div>
+
+
 </body>
-</html>
+
 
 
 <?php
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
+
+    //CHANGE HISTORY BEFÜLLEN
+    if($_POST['firstname'] !== $user->getFirstname()) {
+        $user->addToHistory("First Name changed from " . $user->getFirstname() . " to " . $_POST['firstname']
+        ."<br><p>[".date('Y-m-d H:i:s')."]</p>");
+    }
+    if($_POST['lastname'] !== $user->getLastname()) {
+        $user->addToHistory("Last Name changed from " . $user->getLastname() . " to " . $_POST['lastname']
+        ."<br><p>[".date('Y-m-d H:i:s')."]</p>");
+    }
+    if($_POST['CoT'] !== $user->getCot()) {
+        $user->addToHistory("Preferred drink changed from " . $user->getCot() . " to " . $_POST['CoT']
+        ."<br><p>[".date('Y-m-d H:i:s')."]</p>");
+    }
+    if($_POST['biography'] !== $user->getBio()) {
+        $user->addToHistory("Biography changed."
+        ."<br><p>[".date('Y-m-d H:i:s')."]</p>");
+    }
+    if($_POST['layout'] !== $user->getLayout()) {
+        $user->addToHistory("Chat layout changed from " . $user->getLayout() . " to " . $_POST['layout']
+        ."<br><p>[".date('Y-m-d H:i:s')."]</p>");
+    }
+
+    //USER OBJECT UPDATEN
     $user->setFirstname($_POST['firstname']);
     $user->setLastname($_POST['lastname']);
     $user->setBio($_POST['biography']);
     $user->setCot($_POST['CoT']);
     $user->setLayout($_POST['layout']);
 
-    
-    $backendService->saveUser($user);
-    $_SESSION['user'] = $user->jsonSerialize();
+    //SESSION UPDATEN
+    $_SESSION['user']['firstname'] = $user->getFirstname();
+    $_SESSION['user']['lastname'] = $user->getLastname();
+    $_SESSION['user']['bio'] = $user->getBio();
+    $_SESSION['user']['cot'] = $user->getCot();
+    $_SESSION['user']['layout'] = $user->getLayout();
 
-    //Aktualisierung
+    $backendService->saveUser($user);
+
     $user = Model\User::fromJSON($_SESSION['user']);
+
+    // Umleitung zur Profilseite mit neuen Parametern
+    header("Location: profile.php?username=" . $user->getUsername());
+    exit;
 
 }
 ?>
+</html>
