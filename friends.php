@@ -57,8 +57,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['addfriend'])) {
           data.forEach(friend => {
             const listItem = document.createElement("li");
             listItem.className = "friendnot";
+            console.log();
             listItem.innerHTML = `
-                        <a class="friend" href="chat.php">${friend.username} (${friend.status})</a>
+                        <a class="friend" href="chat.php?friend=${friend.username}">${friend.username} (${friend.status})</a>
                     `;
             friendsList.appendChild(listItem);
           });

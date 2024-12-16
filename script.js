@@ -1,84 +1,51 @@
-const inputUsername = document.querySelector('input[name="username"]');
-const inputPassword = document.querySelector('input[name="password"]');
-const inputPasswordRepeat = document.querySelector('input[name="confirm-password"]');
-const usernameError = document.querySelector('#usernameError');
-const passwordError = document.querySelector('#passwordError');
-const passwordRepeatError = document.querySelector('#confirmPasswordError');
+document.getElementById("registerForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission
 
-inputUsername.addEventListener('input', function () {
-    inputUsername.classList.remove('error');
-    usernameError.innerHTML = '';
-});
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirm-password").value;
+    const usernameError = document.getElementById("usernameError");
+    const passwordError = document.getElementById("passwordError");
+    const confirmPasswordError = document.getElementById("confirmPasswordError");
 
-inputPassword.addEventListener('input', function () {
-    inputPassword.classList.remove('error');
-    passwordError.innerHTML = '';
-});
+    // Clear previous error messages
+    usernameError.textContent = "";
+    passwordError.textContent = "";
+    confirmPasswordError.textContent = "";
 
-inputPasswordRepeat.addEventListener('input', function () {
-    inputPasswordRepeat.classList.remove('error');
-    passwordRepeatError.innerHTML = '';
-});
-
-async function checkForm(event) {
-    event.preventDefault();
-
-    let hasError = false;
-
-    if (!usernameCheck(inputUsername.value)) {
-        inputUsername.classList.add('error');
-        hasError = true;
-    } else {
-        const userExists = await usernameExists(inputUsername.value);
-        if (userExists) {
-            usernameError.innerHTML = "Username already exists";
-            inputUsername.classList.add('error');
-            hasError = true;
-        }
-    }
-
-    if (!passwordCheck(inputPassword.value, inputPasswordRepeat.value)) {
-        inputPassword.classList.add('error');
-        inputPasswordRepeat.classList.add('error');
-        hasError = true;
-    }
-
-    if (!hasError) {
-        alert("Form submitted successfully!");
-        document.getElementById("registerForm").submit();
-    }
-}
-
-function usernameCheck(username) {
+    // Validate username length
     if (username.length < 3) {
-        usernameError.innerHTML = "Username must be at least 3 characters long";
-        return false;
+        usernameError.textContent = "Der Nutzername muss mindestens 3 Zeichen lang sein.";
+        return;
     }
-    return true;
-}
 
-function passwordCheck(passwordValue, passwordRepeatValue) {
-    if (passwordValue.length < 8) {
-        passwordError.innerHTML = "Password must be at least 8 characters long";
-        return false;
-    }
-    if (passwordValue !== passwordRepeatValue) {
-        passwordRepeatError.innerHTML = "Passwords do not match";
-        return false;
-    }
-    return true;
-}
+    // Check if username is available
+    fetch(`ajax_check_user.php?user=${encodeURIComponent(username)}`)
+        .then(response => {
+            if (response.status === 404) {
+                // Username is available, proceed with other validations
+                if (password.length < 8) {
+                    passwordError.textContent = "Das Passwort muss mindestens 8 Zeichen lang sein.";
+                    return;
+                }
 
-async function usernameExists(username) {
-    try {
-        const response = await fetch(
-            `https://online-lectures-cs.thi.de/chat/54f425ca-c5bd-4a9a-aa30-2b7107f6dbcb/${username}`
-        );
-        return response.status === 204;
-    } catch (error) {
-        console.error("Error checking username:", error);
-        return false;
-    }
-}
+                if (password !== confirmPassword) {
+                    confirmPasswordError.textContent = "Die Passwörter stimmen nicht überein.";
+                    return;
+                }
 
-document.getElementById("registerForm").addEventListener("submit", checkForm);
+                // If all validations pass, submit the form
+                this.submit();
+            } else if (response.status === 204) {
+                // Username is taken
+                usernameError.textContent = "Der Nutzername ist bereits vergeben.";
+            } else {
+                // Handle other response statuses
+                usernameError.textContent = "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.";
+            }
+        })
+        .catch(error => {
+            console.error("Error checking username:", error);
+            usernameError.textContent = "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.";
+        });
+});

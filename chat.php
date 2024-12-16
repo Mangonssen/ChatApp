@@ -1,3 +1,20 @@
+<?php 
+require("start.php");
+
+if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+    echo '<script>window.location.href = "login.php";</script>';
+    exit();
+}
+
+
+
+if (!isset($_GET['friend']) || empty($_GET['friend'])) {
+    echo '<script>window.location.href = "friends.php";</script>';
+    exit();
+}
+
+$chatPartner = htmlspecialchars($_GET['friend']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +47,7 @@
     <nav class="links">
         <a href="friends.php">← Back</a>
         <a href="profile.php">Profile</a>
-        <a href="">Remove Friend</a>
+        <a href="<?php printf('friends.php?action=remove&friend=%s', $_GET['friend']) ?>">Remove Friend</a>
     </nav>
 
     <div id="chat" class="chat"> <!-- Chat wird per JS erzeugt! -->
