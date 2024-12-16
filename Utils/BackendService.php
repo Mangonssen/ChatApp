@@ -30,6 +30,15 @@ class BackendService{
      * @param $base Basisadresse des Backends
      * @param $id Collection ID
      */
+    public function test() {
+        try {
+        return HttpClient::get($this->base . '/test.json');
+        } catch(\Exception $e) {
+            error_log($e);
+        }
+        return false;
+    }
+    
     public function __construct($base, $id) {
         $this->link = join_paths($base, $id);
         $this->base = $base;
