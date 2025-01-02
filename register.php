@@ -1,72 +1,13 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register</title>
-  <link rel="stylesheet" href="chatapp-css.css">
-  <link rel="stylesheet" href="https://use.typekit.net/ngh4elb.css">
-  <link rel="icon" href="logo.ico" type="image/x-icon">
-
-
-</head>
-
-<body>
-
-
-  <div class="page-container">
-
-    <header class="site-header">
-      <a href="profile.html">
-        <img src="logo.png" alt="logo" id="logo">
-      </a>
-    </header>
-
-    <div class="heading-container-centered">
-      <img src="register.png" alt="login" class="title-icon">
-      <h1>Register</h1>
-    </div>
-    
-
-
-    <div class="data-entry">
-
-      <form action="register.php" id="registerForm" method="POST">
-        <div class="input-set">
-          <label for="username">Username</label><span id="usernameError" class="error-message"></span>
-          <br>
-          <input type="text" name="username" id="username" required placeholder="Username">
-        </div>
-
-        <div class="input-set">
-          <label for="password">Password</label><span id="passwordError" class="error-message"></span>
-          <br>
-          <input type="password" name="password" id="password" required placeholder="Password">
-        </div>
-
-        <div class="input-set">
-          <label for="confirm-password">Confirm Password</label><span id="confirmPasswordError" class="error-message"></span>
-          <br>
-          <input type="password" name="confirm-password" id="confirm-password" required placeholder="Confirm Password">
-        </div>
-
-
-        <br>
-    </div>
-
-
-    <div class="buttons">
-
-      <button type="button" onclick="window.location.href='login.php';">Cancel</button>
-      <button type="submit">Create Account</button>
-    </div>
-    </form>
 <?php
-    require 'start.php'; // Include the required dependencies
+require 'start.php'; // Include the required dependencies
 
 $errors = [];
+$usernameError = '';
+$passwordError = '';
+$confirmPasswordError = '';
 
 // Check if the form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -76,29 +17,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validate the inputs
     if (empty($username) || strlen($username) < 3) {
-        $errors[] = "Der Nutzername muss mindestens 3 Zeichen lang sein.";
+        $usernameError = "Der Nutzername muss mindestens 3 Zeichen lang sein.";
     }
 
     if ($service->userExists($username)) {
-        $errors[] = "Der Nutzername ist bereits vergeben.";
+        $usernameError = "Der Nutzername ist bereits vergeben.";
     }
 
     if (empty($password)) {
-        $errors[] = "Das Passwort darf nicht leer sein.";
+        $passwordError = "Das Passwort darf nicht leer sein.";
     }
 
     if (strlen($password) < 8) {
-        $errors[] = "Das Passwort muss mindestens 8 Zeichen lang sein.";
+        $passwordError = "Das Passwort muss mindestens 8 Zeichen lang sein.";
     }
 
     if ($password !== $confirmPassword) {
-        $errors[] = "Die Passwörter stimmen nicht überein.";
+        $confirmPasswordError = "Die Passwörter stimmen nicht überein.";
     }
 
     // Register the user if no errors
-    if (empty($errors)) {
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT); // Secure password hashing
-        $result = $service->register($username, $hashedPassword);
+    if (empty($usernameError) && empty($passwordError) && empty($confirmPasswordError)) {
+        
+        $result = $service->register($username, $password);
         if ($result) {
             session_start();
             $_SESSION['user'] = $username;
@@ -110,8 +51,76 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-  </div>
-  <script src="script.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootchatapp-css.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ngh4elb.css">
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <header class="text- my-4">
+            <a href="profile.php">
+                <img src="logo.png" alt="logo" id="logo" class="img-fluid">
+            </a>
+        </header>
+
+        <div class="text-center mb-4">
+            <img src="register.png" alt="register" class="title-icon">
+            <h1>Register</h1>
+        </div>
+
+
+        
+        <div class="data-entry d-flex justify-content-center align-items-center" >
+        <div class="col-md-6 col-lg-4" >
+        
+            <form action="register.php" id="registerForm" method="POST" class="needs-validation" novalidate>
+                <div class="form-group">
+                 
+                    <input type="text" class="form-control <?php echo !empty($usernameError) ? 'is-invalid' : ''; ?>" name="username" id="username" placeholder="Username" value="<?php echo isset($username) ? htmlspecialchars($username) : ''; ?>" required>
+                    <div class="invalid-feedback">
+                        <?php echo $usernameError; ?>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                
+                    <input type="password" class="form-control <?php echo !empty($passwordError) ? 'is-invalid' : ''; ?>" name="password" id="password" required placeholder="Password" required>
+                    <div class="invalid-feedback">
+                        <?php echo $passwordError; ?>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                
+                    <input type="password" class="form-control <?php echo !empty($confirmPasswordError) ? 'is-invalid' : ''; ?>" name="confirm-password" id="confirm-password" required placeholder="Confirm Password" required>
+                    <div class="invalid-feedback">
+                        <?php echo $confirmPasswordError; ?>
+                    </div>
+                </div>
+
+                <div class="buttons text-center">
+                    <button type="button" class="btn btn-secondary" onclick="window.location.href='login.php';">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Account</button>
+                </div>
+            </form>
+        </div>
+
+       
+
+    </div>
+
+
+
+    
+
+    
 </body>
 
 </html>
