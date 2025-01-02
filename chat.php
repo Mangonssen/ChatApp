@@ -47,7 +47,7 @@ $chatPartner = htmlspecialchars($_GET['friend']);
     <!-- Navigationslinks -->
     <nav class="links">
         <a href="friends.php">← Back</a>
-        <a href="profile.php">Profile</a>
+        <a href="<?php printf('profile.php?username=%s', $_GET['friend']) ?>">Profile</a>
         <a href="<?php printf('friends.php?action=remove&friend=%s', $_GET['friend']) ?>">Remove Friend</a>
     </nav>
 
