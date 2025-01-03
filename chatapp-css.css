@@ -16,6 +16,8 @@ body {
     width: 90%;
     max-width: 800px;
     margin: 20px auto;
+
+    position: relative;
 }
 
 header {
@@ -120,22 +122,9 @@ label {
     font-size: 15px;
 }
 
-
-
 input { 
-    width: 300px;
-    height: 12px;
-    padding: 10px;
-    background-color:#ffffff20;
-    border-color: #ffffff00;
-    border-radius: 5px;
-
-    margin-top:5px;
-
-    font-family: 'Manrope', sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    color:#ffffff;
+    width: 100%;
+    background-color: #ffffff00;
 }
 
 input:focus {
@@ -167,8 +156,7 @@ button, #regButton {
     font-family: 'Manrope', sans-serif;
     font-weight: 400;
     color: #ffffff;
-
-    margin: 5px;
+    
 }
 
 button:hover, #regButton:hover {
@@ -306,7 +294,7 @@ ol {
     display: flex;
     width: 800px;
     
-    height:250px;
+    height:100px;
 
     background-color:rgb(32, 33, 33);
 
@@ -314,13 +302,22 @@ ol {
     bottom: 0;
 }
 
-.chat-input {
-    
+form {
+    width: 100%;
+}
+
+
+.chat-input-wrapper {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 800px;
 
     position: fixed;
-    bottom: 200px;
-}
+    bottom: 25px;
+} 
+
 
 .goodbye-message {
     text-align: center;
@@ -461,6 +458,8 @@ input[type="radio"] {
     display: flex;
     margin-top: 250px;
 }
+
+
 
 
 
