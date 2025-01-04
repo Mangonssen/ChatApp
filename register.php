@@ -57,27 +57,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootchatapp-css.css">
+    <link rel="stylesheet" href="chatapp-css.css">
     <link rel="stylesheet" href="https://use.typekit.net/ngh4elb.css">
     <link rel="icon" href="logo.ico" type="image/x-icon">
 </head>
 
 <body>
     <div class="container">
-        <header class="text- my-4">
-            <a href="profile.php">
-                <img src="logo.png" alt="logo" id="logo" class="img-fluid">
-            </a>
+    <header class="site-header">
+            <!--LOGO-->
+            <div class="logo">
+                <a href="profile.php">
+                    <img src="logo.png" alt="logo" id="logo" >
+                </a>
+            </div>
         </header>
 
-        <div class="text-center mb-4">
+        <div class="text-center mb-5">
             <img src="register.png" alt="register" class="title-icon">
             <h1>Register</h1>
         </div>
 
 
         
-        <div class="data-entry d-flex justify-content-center align-items-center" >
+        <div class="data-entry d-flex justify-content-left align-items-center" >
         <div class="col-md-6 col-lg-4" >
         
             <form action="register.php" id="registerForm" method="POST" class="needs-validation" novalidate>
