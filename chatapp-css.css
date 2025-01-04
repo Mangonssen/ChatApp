@@ -10,12 +10,15 @@ body {
     font-family: 'Manrope',sans-serif;
     font-weight: 400;
     color: #FFFFFF;
+   
 }
 
 .page-container {
     width: 90%;
     max-width: 800px;
     margin: 20px auto;
+
+    position: relative;
 }
 
 header {
@@ -78,8 +81,6 @@ header img:hover {
     margin-right: 20px;
 }
 
-
-/* headings */
 h1 {
     text-align: center;
 
@@ -120,23 +121,10 @@ label {
     font-size: 15px;
 }
 
-
-
-input { 
-    width: 300px;
-    height: 12px;
-    padding: 10px;
-    background-color:#ffffff20;
-    border-color: #ffffff00;
-    border-radius: 5px;
-
-    margin-top:5px;
-
-    font-family: 'Manrope', sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    color:#ffffff;
-}
+/* input { 
+    width: 100%;
+    background-color: #ffffff00;
+} */
 
 input:focus {
     outline: none;
@@ -149,7 +137,7 @@ input:focus {
 .buttons {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    
 
     margin-top: 20px;
 }
@@ -167,8 +155,7 @@ button, #regButton {
     font-family: 'Manrope', sans-serif;
     font-weight: 400;
     color: #ffffff;
-
-    margin: 5px;
+    
 }
 
 button:hover, #regButton:hover {
@@ -306,7 +293,7 @@ ol {
     display: flex;
     width: 800px;
     
-    height:250px;
+    height:100px;
 
     background-color:rgb(32, 33, 33);
 
@@ -314,13 +301,22 @@ ol {
     bottom: 0;
 }
 
-.chat-input {
-    
+form {
+    width: 100%;
+}
+
+
+.chat-input-wrapper {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 800px;
 
     position: fixed;
-    bottom: 200px;
-}
+    bottom: 25px;
+} 
+
 
 .goodbye-message {
     text-align: center;
@@ -377,8 +373,7 @@ option {
 }
 
 textarea {
-    width: 740px;
-    height: 200px;
+    
     background-color:#ffffff20;
     padding-left: 20px;
     padding-right: 20px;
@@ -395,11 +390,7 @@ textarea {
 }
 
 .layout {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
-    margin-bottom: 10px;
+    min-width: 100%;
 }
 
 .layout label {
@@ -423,20 +414,9 @@ input[type="radio"] {
     margin-right: 10px;
 }
 
-.change-history {
-    min-width: 25%;
-    
 
-    display: flex;
-    flex-direction: column;
-    align-items: left;
 
-    position: absolute;
-    right: 20px;
-    top: 75px;
-}
-
-.change-history ul {
+/* .change-history ul {
     list-style-type: none;
     background-color:#ffffff00;
     padding: 0px;
@@ -445,6 +425,12 @@ input[type="radio"] {
 
     color: #FFFFFF50;
 
+} */
+
+.btn-check:checked + .btn {
+    border: none;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .change-history li {
@@ -461,6 +447,8 @@ input[type="radio"] {
     display: flex;
     margin-top: 250px;
 }
+
+
 
 
 
