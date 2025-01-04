@@ -24,19 +24,23 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] !== '') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrapregister-css.css">
+    <link rel="stylesheet" href="chatapp-css.css">
     
     <link rel="icon" href="logo.ico" type="image/x-icon">
 </head>
 <body>
 
 <div class="container mt-5">
-    <header class="site-header">
-        <div class="logo">
-            <!-- Logo hier -->
-        </div>
-    </header>
-
+    <div class="row align-items-start">
+<div class="col col-8">
+<header class="site-header">
+            <!--LOGO-->
+            <div class="logo">
+                <a href="profile.php">
+                    <img src="logo.png" alt="logo" id="logo" >
+                </a>
+            </div>
+        </header>
     <div class="heading-container-left">
         <h1>Profile of <?php echo htmlspecialchars($user->getUsername()) ?></h1>
     </div>
@@ -72,25 +76,32 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] !== '') {
         <p><?php echo ucfirst(htmlspecialchars($user->getCot())) ?></p>
     
     </div>
+</div>
+<div class="col col-4">
+          
+    
 
-        <!-- Change History -->
-        <div class="d-flex justify-content-end">
-        <div class='change-history'>
-        <h3 class='change-history-header'> CHANGE HISTORY </h3>
-        <ul class='change-history-list'>
-            <?php
-            if ($user->getHistory() !== null) {
-                foreach ($user->getHistory() as $history) {
-                    echo $history;
-                }
-            } else {
-                echo "<li class='change-history-item'>No changes made yet.</li>";
-            }
-            ?>
-        </ul>
-    </div>
+
+<?php
+//CHANGE HISTORY HTML
+echo "
+<div class='change-history-container m-3'>
+    <h3 class='change-history-header'> CHANGE HISTORY </h3>
+    <ul class='list-group bg-transparent text-secondary'>";
+    if($user->getHistory() !== null)
+    {foreach($user->getHistory() as $history){
+    echo "<li class='change-history-item'>".$history."</li>";
+    }} else {
+    echo "<li class='change-history-item'>No changes made yet.</li>";
+    }
+    echo "</ul></div>";
+?>
+
+</div>
     </div>
 </div>
+</div>
+
 
 <!-- Modal for Remove Friend Confirmation -->
 <div class="modal fade" id="removeFriendModal" tabindex="-1" role="dialog" aria-labelledby="removeFriendModalLabel" aria-hidden="true">
