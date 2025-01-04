@@ -29,25 +29,33 @@ echo $backendService->loadUser($_SESSION['user'])->getFirstname();
     <link rel="stylesheet" href="https://use.typekit.net/ngh4elb.css">
 </head>
 <body>
-    <a href="#" class ="btn btn-primary" data-bs-toggle="modal" data-bs-target="#removeFriendModal">Remove Friend</a>
+<div class="container">
+<div class="row align-items-start">
+<div class="col col-8 bg-white">
 
-    <div class="modal fade" id="removeFriendModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-dark">
-            <div class="modal-content bg-dark text-white">
-                <div class="modal-header">
-                    <h5 class="modal-title">Remove friend</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Are you sure you want to remove this friend?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="friends.php?action=remove&friend=<?php echo $_GET['friend']?>" class="btn btn-primary">Remove</a>
-                </div>
-            </div>
+    <header class="site-header">
+        <!--LOGO-->
+        <div class="logo">
+            <a href="profile.php">
+                <img src="logo.png" alt="logo" id="logo" >
+            </a>
         </div>
+    </header>
+
+    <!--USER SETTINGS TITLE-->
+    <div class="heading-container-left">
+        <img src="gear.png" alt="user settings" class="title-icon">
+        <h1>User Settings</h1>
     </div>
+</div>
+<div class="col col-2 border">
+    <nav class="links">
+        <a href="profile.php">← Back</a>
+    </nav>
+</div>    
+
+</div>
+</div>
 
 </body>
 </html>
