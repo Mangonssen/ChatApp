@@ -73,9 +73,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </header>
 
-        <div class="text-center mb-5">
+        <div class="container mb-5">
+        <div class="heading-container-centered">
             <img src="register.png" alt="register" class="title-icon">
             <h1>Register</h1>
+        </div>
         </div>
 
 
