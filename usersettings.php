@@ -1,4 +1,5 @@
 <?php 
+ob_start();
 require("start.php");
 require_once("Utils/BackendService.php");
 require_once("Model/User.php");
@@ -24,7 +25,7 @@ if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link rel="stylesheet" href="chatapp-css.css">
+    <link rel="stylesheet" href="chatapp-css.css?v=<?version?>">
     <link rel="stylesheet" href="https://use.typekit.net/ngh4elb.css">
 </head>
 <body>
@@ -119,7 +120,7 @@ if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
         </div>
     </div>
     
-        <div class="col col-4">
+    <div class="col col-4">
           
     
 
@@ -132,9 +133,9 @@ echo "
     <ul class='list-group bg-transparent text-secondary'>";
     if($user->getHistory() !== null)
     {foreach($user->getHistory() as $history){
-        echo "<li class='change-history-item'>".$history."</li>";
+    echo "<li class='change-history-item'>".$history."</li>";
     }} else {
-        echo "<li class='change-history-item'>No changes made yet.</li>";
+    echo "<li class='change-history-item'>No changes made yet.</li>";
     }
     echo "</ul></div>";
 ?>
@@ -194,6 +195,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //$_SESSION['user']['cot'] = $user->getCot();
     //$_SESSION['user']['layout'] = $user->getLayout();
 
+    
+
     $backendService->saveUser($user);
 
     $user = Model\User::fromJSON($backendService->loadUser($_SESSION['user']));
@@ -203,6 +206,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 
 }
-
+ob_end_flush();
 ?>
 </html>
