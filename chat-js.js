@@ -42,6 +42,8 @@ function checkFriendship(callback) {
     xmlhttp.send();
 }
 
+
+
 // Function to load messages from the server
 function getMessageArray(callback) {
     const xmlhttp = new XMLHttpRequest();

@@ -1,3 +1,20 @@
+<?php
+require("start.php");
+
+if (isset($_GET['action']) && isset($_GET['friend'])) {
+    $action = $_GET['action'];
+    $friend = $_GET['friend'];
+
+    if ($action == 'accept') {
+        $service->friendAccept($friend);
+    } elseif ($action == 'dismiss') {
+        $service->friendDismiss($friend);
+    } elseif ($action == 'remove') {
+        $service->removeFriend($friend);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
