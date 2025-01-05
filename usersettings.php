@@ -37,9 +37,7 @@ if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
         <header class="site-header">
             <!--LOGO-->
             <div class="logo">
-                <a href="profile.php">
                     <img src="logo.png" alt="logo" id="logo" >
-                </a>
             </div>
         </header>
 
@@ -86,7 +84,7 @@ if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
         <div class="bio">
         <h2>Your Biography</h2>
 
-            <textarea class="form-control bg-transparent text-white" name="biography" id="biography" cols="30" rows="10"><?php if ($user->getBio() !== null) { echo htmlspecialchars($user->getBio()); } ?></textarea>
+            <textarea class="form-control bg-transparent text-white input-padding-y:4" name="biography" id="biography" cols="30" rows="10"><?php if ($user->getBio() !== null) { echo htmlspecialchars($user->getBio()); } ?></textarea>
         </div>
         <br>
 
@@ -112,7 +110,7 @@ if (!isset($_SESSION['user']) || empty($_SESSION['user'])) {
 
         <!-- SAVE AND CANCEL -->
         <div class="buttons">
-            <button class="btn btn-light m-1" type="button" id="cancel" onclick="window.location.href='friends.php';">Cancel</button>
+            <button class="btn btn-outline-light m-1" type="button" id="cancel" onclick="window.location.href='friends.php';">Cancel</button>
             <button class="btn btn-light m-1" type="submit" id="save">Save</button>
         
         </form>

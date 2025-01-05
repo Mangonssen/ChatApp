@@ -27,7 +27,7 @@ $chatPartner = htmlspecialchars($_GET['friend']);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link rel="stylesheet" href="chatapp-css.css">
+    <link rel="stylesheet" href="chatapp-css.css?v=<?version?>">
     <link rel="stylesheet" href="https://use.typekit.net/ngh4elb.css">
 </head>
 <body>
@@ -36,14 +36,15 @@ $chatPartner = htmlspecialchars($_GET['friend']);
 
         <!-- Header mit Logo -->
         <header class="site-header">
-            <a href="profile.php0">
+            
                 <img src="logo.png" alt="logo" id="logo" >
-            </a>
+            
         </header>
     
     <!-- Titel -->
     <div id="chat-title" class="heading-container-centered">
-      </div>
+          
+    </div>
 
     <hr>
 
@@ -66,7 +67,7 @@ $chatPartner = htmlspecialchars($_GET['friend']);
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="friends.php?action=remove&friend=<?php echo $_GET['friend']?>" class="btn btn-primary">Remove</a>
+                    <a href="friends.php?action=remove&friend=<?php echo $_GET['friend']?>" class="btn btn-danger">Remove</a>
                 </div>
             </div>
         </div>
