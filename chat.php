@@ -67,7 +67,7 @@ $chatPartner = htmlspecialchars($_GET['friend']);
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="friends.php?action=remove&friend=<?php echo $_GET['friend']?>" class="btn btn-primary">Remove</a>
+                    <a href="friends.php?action=remove&friend=<?php echo $_GET['friend']?>" class="btn btn-danger">Remove</a>
                 </div>
             </div>
         </div>
