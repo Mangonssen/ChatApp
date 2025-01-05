@@ -1,9 +1,10 @@
 async function loadFriends() {
-    const apiUrl = "ajax_load_friends.php";
     try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error(`Failed to fetch friends: ${response.statusText}`);
+        const response = await fetch("ajax_load_friends.php");
+        if (!response.ok) throw new Error("Failed to load friends");
+
         const data = await response.json();
+        console.log("Friends Data:", data);
 
         const friends = data.filter(friend => friend.status === "accepted");
         const friendRequests = data.filter(friend => friend.status === "requested");
@@ -14,6 +15,7 @@ async function loadFriends() {
         console.error("Error loading friends:", error);
     }
 }
+
 
 function updateFriendList(friends) {
     const friendListElement = document.getElementById("friendlist");
@@ -34,21 +36,46 @@ function updateFriendList(friends) {
 
 
 
+function showFriendRequestModal(username) {
+    const modal = new bootstrap.Modal(document.getElementById('friendRequestModal'));
+    const friendRequestText = document.getElementById('friendRequestText');
+    const acceptButton = document.getElementById('acceptButton');
+    const rejectButton = document.getElementById('rejectButton');
+
+
+    friendRequestText.innerHTML = `Do you want to accept the friend request from <b>${username}</b>?`;
+
+
+    acceptButton.onclick = () => {
+        acceptRequest(username);
+        modal.hide();
+    };
+
+    rejectButton.onclick = () => {
+        rejectRequest(username);
+        modal.hide();
+    };
+
+ 
+    modal.show();
+}
+
 
 function updateFriendRequests(friendRequests) {
-    const requestsElement = document.getElementById("friendRequests");
-    requestsElement.innerHTML = "";
+    const friendRequestParent = document.getElementById("friendRequests");
+    friendRequestParent.innerHTML = "";
 
     friendRequests.forEach(request => {
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `
+        const requestItem = document.createElement("li");
+        requestItem.innerHTML = `
             Friend request from <b>${request.username}</b>
-            <button onclick="acceptRequest('${request.username}')">Accept</button>
-            <button onclick="rejectRequest('${request.username}')">Reject</button>
+            <button class="btn btn-primary btn-sm" onclick="acceptRequest('${request.username}')">Accept</button>
+            <button class="btn btn-danger btn-sm" onclick="rejectRequest('${request.username}')">Reject</button>
         `;
-        requestsElement.appendChild(listItem);
+        friendRequestParent.appendChild(requestItem);
     });
 }
+
 
 async function addFriend() {
     const input = document.getElementById("addfriend");
