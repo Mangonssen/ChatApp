@@ -2,3 +2,17 @@
 #white-text {
     color: white;
 }
+
+#friendRequestModal .modal-content {
+    background-color: #333333;
+    color: white;
+}
+
+.list-group-numbered {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.list-group-item:hover {
+    background-color: #333333;
+}

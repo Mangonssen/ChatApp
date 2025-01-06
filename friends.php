@@ -57,51 +57,32 @@ if (isset($_GET['action']) && isset($_GET['friend'])) {
 
         <hr>
 
-        <!-- <div class="modal" id="friendRequestModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Friend Request</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Do you want to accept or reject this friend request?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" onclick="acceptRequest()">Accept</button>
-                        <button type="button" class="btn btn-danger" onclick="rejectRequest()">Reject</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+        <div class="friend-requests" style="color: white;">
+            <h2>New Requests</h2>
+            <ol class="list-group-numbered" id="friendRequests">
 
-        <div class="modal fade" id="friendRequestModal" tabindex="-1" aria-labelledby="friendRequestModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="friendRequestModalLabel">Friend Request</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p id="friendRequestText">Do you want to accept the friend request from <b></b>?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" id="acceptButton" class="btn btn-primary">Accept</button>
-                        <button type="button" id="rejectButton" class="btn btn-danger">Reject</button>
+            </ol>
+
+            <div class="modal fade" id="friendRequestModal" tabindex="-1" aria-labelledby="friendRequestModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="friendRequestModalLabel">Friend Request</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="friendRequestText"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="rejectButton" type="button" class="btn btn-danger">Reject</button>
+                            <button id="acceptButton" type="button" class="btn btn-primary">Accept</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-
-        <!-- <div class="friend-requests" style="color: white;">
-            <h2>New Requests</h2>
-            <ol id="friendRequests">
-
-            </ol>
-        </div> -->
 
         <hr>
 

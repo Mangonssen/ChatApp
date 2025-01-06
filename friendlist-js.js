@@ -16,25 +16,23 @@ async function loadFriends() {
     }
 }
 
-
 function updateFriendList(friends) {
     const friendListElement = document.getElementById("friendlist");
     friendListElement.innerHTML = "";
 
     friends.forEach(friend => {
         const listItem = document.createElement("li");
-        listItem.classList.add('friend');
+        listItem.classList.add('d-flex', 'justify-content-between', 'align-items-center');
 
         const friendLink = document.createElement("a");
         friendLink.textContent = `${friend.username} (${friend.status})`;
         friendLink.href = `chat.php?friend=${encodeURIComponent(friend.username)}`;
+        friendLink.classList.add('text-white');
 
         listItem.appendChild(friendLink);
         friendListElement.appendChild(listItem);
     });
 }
-
-
 
 function showFriendRequestModal(username) {
     const modal = new bootstrap.Modal(document.getElementById('friendRequestModal'));
@@ -42,9 +40,7 @@ function showFriendRequestModal(username) {
     const acceptButton = document.getElementById('acceptButton');
     const rejectButton = document.getElementById('rejectButton');
 
-
     friendRequestText.innerHTML = `Do you want to accept the friend request from <b>${username}</b>?`;
-
 
     acceptButton.onclick = () => {
         acceptRequest(username);
@@ -56,10 +52,8 @@ function showFriendRequestModal(username) {
         modal.hide();
     };
 
- 
     modal.show();
 }
-
 
 function updateFriendRequests(friendRequests) {
     const friendRequestParent = document.getElementById("friendRequests");
@@ -67,15 +61,22 @@ function updateFriendRequests(friendRequests) {
 
     friendRequests.forEach(request => {
         const requestItem = document.createElement("li");
-        requestItem.innerHTML = `
-            Friend request from <b>${request.username}</b>
-            <button class="btn btn-primary btn-sm" onclick="acceptRequest('${request.username}')">Accept</button>
-            <button class="btn btn-danger btn-sm" onclick="rejectRequest('${request.username}')">Reject</button>
-        `;
+        requestItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+
+        const usernameSpan = document.createElement("span");
+        usernameSpan.classList.add('flex-grow-1', 'text-start', 'ms-2');
+        usernameSpan.innerHTML = `<b>${request.username}</b>`;
+
+        const reviewButton = document.createElement("button");
+        reviewButton.classList.add('btn', 'btn-light', 'btn-sm');
+        reviewButton.textContent = "Review";
+        reviewButton.onclick = () => showFriendRequestModal(request.username);
+
+        requestItem.appendChild(usernameSpan);
+        requestItem.appendChild(reviewButton);
         friendRequestParent.appendChild(requestItem);
     });
 }
-
 
 async function addFriend() {
     const input = document.getElementById("addfriend");
@@ -122,8 +123,4 @@ async function rejectRequest(username) {
 }
 
 document.addEventListener("DOMContentLoaded", loadFriends);
-window.setInterval(function() {
-    loadFriends();
-}, 1000);
-
-loadFriends();
+window.setInterval(loadFriends, 1000);
